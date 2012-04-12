@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C38C2AB815373F2F00424A0D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38C2AB715373F2F00424A0D /* Cocoa.framework */; };
+		C38C2AC215373F2F00424A0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C38C2AC015373F2F00424A0D /* InfoPlist.strings */; };
+		C38C2AC615373F2F00424A0D /* Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C2AC515373F2F00424A0D /* Omazing.m */; };
+		C38C2ACE15373F2F00424A0D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38C2ACD15373F2F00424A0D /* SenTestingKit.framework */; };
+		C38C2ACF15373F2F00424A0D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38C2AB715373F2F00424A0D /* Cocoa.framework */; };
+		C38C2AD215373F2F00424A0D /* Omazing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38C2AB415373F2F00424A0D /* Omazing.framework */; };
+		C38C2AD815373F2F00424A0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C38C2AD615373F2F00424A0D /* InfoPlist.strings */; };
+		C38C2ADB15373F2F00424A0D /* OmazingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C2ADA15373F2F00424A0D /* OmazingTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C38C2AD015373F2F00424A0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C38C2AAA15373F2F00424A0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C38C2AB315373F2F00424A0D;
+			remoteInfo = Omazing;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C38C2AB415373F2F00424A0D /* Omazing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Omazing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38C2AB715373F2F00424A0D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C38C2ABA15373F2F00424A0D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C38C2ABB15373F2F00424A0D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C38C2ABC15373F2F00424A0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C38C2ABF15373F2F00424A0D /* Omazing-Info.plist */ = {isa = PBXFileReference; path = "Omazing-Info.plist"; sourceTree = "<group>"; };
+		C38C2AC115373F2F00424A0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C38C2AC315373F2F00424A0D /* Omazing-Prefix.pch */ = {isa = PBXFileReference; path = "Omazing-Prefix.pch"; sourceTree = "<group>"; };
+		C38C2AC415373F2F00424A0D /* Omazing.h */ = {isa = PBXFileReference; path = Omazing.h; sourceTree = "<group>"; };
+		C38C2AC515373F2F00424A0D /* Omazing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Omazing.m; sourceTree = "<group>"; };
+		C38C2ACC15373F2F00424A0D /* OmazingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmazingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38C2ACD15373F2F00424A0D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C38C2AD515373F2F00424A0D /* OmazingTests-Info.plist */ = {isa = PBXFileReference; path = "OmazingTests-Info.plist"; sourceTree = "<group>"; };
+		C38C2AD715373F2F00424A0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C38C2AD915373F2F00424A0D /* OmazingTests.h */ = {isa = PBXFileReference; path = OmazingTests.h; sourceTree = "<group>"; };
+		C38C2ADA15373F2F00424A0D /* OmazingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OmazingTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C38C2AB015373F2F00424A0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C38C2AB815373F2F00424A0D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C38C2AC815373F2F00424A0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C38C2ACE15373F2F00424A0D /* SenTestingKit.framework in Frameworks */,
+				C38C2ACF15373F2F00424A0D /* Cocoa.framework in Frameworks */,
+				C38C2AD215373F2F00424A0D /* Omazing.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C38C2AA815373F2F00424A0D = {
+			isa = PBXGroup;
+			children = (
+				C38C2ABD15373F2F00424A0D /* Omazing */,
+				C38C2AD315373F2F00424A0D /* OmazingTests */,
+				C38C2AB615373F2F00424A0D /* Frameworks */,
+				C38C2AB515373F2F00424A0D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C38C2AB515373F2F00424A0D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C38C2AB415373F2F00424A0D /* Omazing.framework */,
+				C38C2ACC15373F2F00424A0D /* OmazingTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C38C2AB615373F2F00424A0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C38C2AB715373F2F00424A0D /* Cocoa.framework */,
+				C38C2ACD15373F2F00424A0D /* SenTestingKit.framework */,
+				C38C2AB915373F2F00424A0D /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C38C2AB915373F2F00424A0D /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C38C2ABA15373F2F00424A0D /* AppKit.framework */,
+				C38C2ABB15373F2F00424A0D /* CoreData.framework */,
+				C38C2ABC15373F2F00424A0D /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C38C2ABD15373F2F00424A0D /* Omazing */ = {
+			isa = PBXGroup;
+			children = (
+				C38C2AC415373F2F00424A0D /* Omazing.h */,
+				C38C2AC515373F2F00424A0D /* Omazing.m */,
+				C38C2ABE15373F2F00424A0D /* Supporting Files */,
+			);
+			path = Omazing;
+			sourceTree = "<group>";
+		};
+		C38C2ABE15373F2F00424A0D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C38C2ABF15373F2F00424A0D /* Omazing-Info.plist */,
+				C38C2AC015373F2F00424A0D /* InfoPlist.strings */,
+				C38C2AC315373F2F00424A0D /* Omazing-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C38C2AD315373F2F00424A0D /* OmazingTests */ = {
+			isa = PBXGroup;
+			children = (
+				C38C2AD915373F2F00424A0D /* OmazingTests.h */,
+				C38C2ADA15373F2F00424A0D /* OmazingTests.m */,
+				C38C2AD415373F2F00424A0D /* Supporting Files */,
+			);
+			path = OmazingTests;
+			sourceTree = "<group>";
+		};
+		C38C2AD415373F2F00424A0D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C38C2AD515373F2F00424A0D /* OmazingTests-Info.plist */,
+				C38C2AD615373F2F00424A0D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C38C2AB115373F2F00424A0D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C38C2AB315373F2F00424A0D /* Omazing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C38C2ADE15373F2F00424A0D /* Build configuration list for PBXNativeTarget "Omazing" */;
+			buildPhases = (
+				C38C2AAF15373F2F00424A0D /* Sources */,
+				C38C2AB015373F2F00424A0D /* Frameworks */,
+				C38C2AB115373F2F00424A0D /* Headers */,
+				C38C2AB215373F2F00424A0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Omazing;
+			productName = Omazing;
+			productReference = C38C2AB415373F2F00424A0D /* Omazing.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C38C2ACB15373F2F00424A0D /* OmazingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C38C2AE115373F2F00424A0D /* Build configuration list for PBXNativeTarget "OmazingTests" */;
+			buildPhases = (
+				C38C2AC715373F2F00424A0D /* Sources */,
+				C38C2AC815373F2F00424A0D /* Frameworks */,
+				C38C2AC915373F2F00424A0D /* Resources */,
+				C38C2ACA15373F2F00424A0D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C38C2AD115373F2F00424A0D /* PBXTargetDependency */,
+			);
+			name = OmazingTests;
+			productName = OmazingTests;
+			productReference = C38C2ACC15373F2F00424A0D /* OmazingTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C38C2AAA15373F2F00424A0D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = C38C2AAD15373F2F00424A0D /* Build configuration list for PBXProject "Omazing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C38C2AA815373F2F00424A0D;
+			productRefGroup = C38C2AB515373F2F00424A0D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C38C2AB315373F2F00424A0D /* Omazing */,
+				C38C2ACB15373F2F00424A0D /* OmazingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C38C2AB215373F2F00424A0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C38C2AC215373F2F00424A0D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C38C2AC915373F2F00424A0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C38C2AD815373F2F00424A0D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C38C2ACA15373F2F00424A0D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C38C2AAF15373F2F00424A0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C38C2AC615373F2F00424A0D /* Omazing.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C38C2AC715373F2F00424A0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C38C2ADB15373F2F00424A0D /* OmazingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C38C2AD115373F2F00424A0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C38C2AB315373F2F00424A0D /* Omazing */;
+			targetProxy = C38C2AD015373F2F00424A0D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C38C2AC015373F2F00424A0D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C38C2AC115373F2F00424A0D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C38C2AD615373F2F00424A0D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C38C2AD715373F2F00424A0D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C38C2ADC15373F2F00424A0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C38C2ADD15373F2F00424A0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C38C2ADF15373F2F00424A0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Omazing/Omazing-Prefix.pch";
+				INFOPLIST_FILE = "Omazing/Omazing-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		C38C2AE015373F2F00424A0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Omazing/Omazing-Prefix.pch";
+				INFOPLIST_FILE = "Omazing/Omazing-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		C38C2AE215373F2F00424A0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Omazing/Omazing-Prefix.pch";
+				INFOPLIST_FILE = "OmazingTests/OmazingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C38C2AE315373F2F00424A0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Omazing/Omazing-Prefix.pch";
+				INFOPLIST_FILE = "OmazingTests/OmazingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C38C2AAD15373F2F00424A0D /* Build configuration list for PBXProject "Omazing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C38C2ADC15373F2F00424A0D /* Debug */,
+				C38C2ADD15373F2F00424A0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C38C2ADE15373F2F00424A0D /* Build configuration list for PBXNativeTarget "Omazing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C38C2ADF15373F2F00424A0D /* Debug */,
+				C38C2AE015373F2F00424A0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C38C2AE115373F2F00424A0D /* Build configuration list for PBXNativeTarget "OmazingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C38C2AE215373F2F00424A0D /* Debug */,
+				C38C2AE315373F2F00424A0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C38C2AAA15373F2F00424A0D /* Project object */;
+}
