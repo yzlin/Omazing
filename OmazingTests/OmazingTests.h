@@ -10,4 +10,7 @@
 
 @interface OmazingTests : SenTestCase
 
+@property (nonatomic, readonly) NSArray *testArray;
+@property (nonatomic, readonly) NSArray *testNumArray;
+
 @end

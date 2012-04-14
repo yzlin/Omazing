@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "NSArray+Omazing.h"
+
 @interface Omazing : NSObject
 
 @end

@@ -15,6 +15,8 @@
 		C38C2AD215373F2F00424A0D /* Omazing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38C2AB415373F2F00424A0D /* Omazing.framework */; };
 		C38C2AD815373F2F00424A0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C38C2AD615373F2F00424A0D /* InfoPlist.strings */; };
 		C38C2ADB15373F2F00424A0D /* OmazingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C2ADA15373F2F00424A0D /* OmazingTests.m */; };
+		C38C2AEC1537416C00424A0D /* NSArray+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C38C2AEA1537416C00424A0D /* NSArray+Omazing.h */; };
+		C38C2AED1537416C00424A0D /* NSArray+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C2AEB1537416C00424A0D /* NSArray+Omazing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,22 +30,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C37B408C153955D400AF4AFE /* OMZCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OMZCommon.h; sourceTree = "<group>"; };
 		C38C2AB415373F2F00424A0D /* Omazing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Omazing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38C2AB715373F2F00424A0D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C38C2ABA15373F2F00424A0D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		C38C2ABB15373F2F00424A0D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C38C2ABC15373F2F00424A0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		C38C2ABF15373F2F00424A0D /* Omazing-Info.plist */ = {isa = PBXFileReference; path = "Omazing-Info.plist"; sourceTree = "<group>"; };
+		C38C2ABF15373F2F00424A0D /* Omazing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Omazing-Info.plist"; sourceTree = "<group>"; };
 		C38C2AC115373F2F00424A0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C38C2AC315373F2F00424A0D /* Omazing-Prefix.pch */ = {isa = PBXFileReference; path = "Omazing-Prefix.pch"; sourceTree = "<group>"; };
-		C38C2AC415373F2F00424A0D /* Omazing.h */ = {isa = PBXFileReference; path = Omazing.h; sourceTree = "<group>"; };
+		C38C2AC315373F2F00424A0D /* Omazing-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Omazing-Prefix.pch"; sourceTree = "<group>"; };
+		C38C2AC415373F2F00424A0D /* Omazing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Omazing.h; sourceTree = "<group>"; };
 		C38C2AC515373F2F00424A0D /* Omazing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Omazing.m; sourceTree = "<group>"; };
 		C38C2ACC15373F2F00424A0D /* OmazingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmazingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38C2ACD15373F2F00424A0D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		C38C2AD515373F2F00424A0D /* OmazingTests-Info.plist */ = {isa = PBXFileReference; path = "OmazingTests-Info.plist"; sourceTree = "<group>"; };
+		C38C2AD515373F2F00424A0D /* OmazingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OmazingTests-Info.plist"; sourceTree = "<group>"; };
 		C38C2AD715373F2F00424A0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C38C2AD915373F2F00424A0D /* OmazingTests.h */ = {isa = PBXFileReference; path = OmazingTests.h; sourceTree = "<group>"; };
+		C38C2AD915373F2F00424A0D /* OmazingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OmazingTests.h; sourceTree = "<group>"; };
 		C38C2ADA15373F2F00424A0D /* OmazingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OmazingTests.m; sourceTree = "<group>"; };
+		C38C2AEA1537416C00424A0D /* NSArray+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Omazing.h"; sourceTree = "<group>"; };
+		C38C2AEB1537416C00424A0D /* NSArray+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Omazing.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +118,9 @@
 				C38C2AC415373F2F00424A0D /* Omazing.h */,
 				C38C2AC515373F2F00424A0D /* Omazing.m */,
 				C38C2ABE15373F2F00424A0D /* Supporting Files */,
+				C38C2AEA1537416C00424A0D /* NSArray+Omazing.h */,
+				C38C2AEB1537416C00424A0D /* NSArray+Omazing.m */,
+				C37B408C153955D400AF4AFE /* OMZCommon.h */,
 			);
 			path = Omazing;
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C38C2AEC1537416C00424A0D /* NSArray+Omazing.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38C2AC615373F2F00424A0D /* Omazing.m in Sources */,
+				C38C2AED1537416C00424A0D /* NSArray+Omazing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +336,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -345,6 +356,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -420,6 +432,7 @@
 				C38C2AE015373F2F00424A0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C38C2AE115373F2F00424A0D /* Build configuration list for PBXNativeTarget "OmazingTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +441,7 @@
 				C38C2AE315373F2F00424A0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
