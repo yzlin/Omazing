@@ -36,6 +36,10 @@
     [super tearDown];
 }
 
+/*
+ * NSArray Extension Test
+ */
+
 - (void)testNSArray_Base {
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
@@ -199,6 +203,43 @@
                 @"b:two",
                 nil];
     STAssertNotNil(result, nil);
+    STAssertTrue([result isEqualToArray:expected], nil);
+}
+
+/*
+ * NSString Extension Test
+ */
+
+- (void)testNSString_Base {
+    STAssertTrue([NSString isNilOrEmpty:nil], nil);
+    STAssertTrue([NSString isNilOrEmpty:@""], nil);
+}
+
+- (void)testNSString_ArrayWithMatchedRegex {
+    NSArray *result = nil;
+    NSArray *expected = nil;
+    
+    result = [@"https://www.httpdomain.com" arrayWithMatchedRegex:@"https?"];
+    expected = [NSArray arrayWithObjects:
+                @"https",
+                @"http",
+                nil];
+    STAssertTrue([result isEqualToArray:expected], nil);
+
+    result = [@"https://www.httpdomain.com" arrayWithMatchedRegex:@"\\w+"];
+    expected = [NSArray arrayWithObjects:
+                @"https",
+                @"www",
+                @"httpdomain",
+                @"com",
+                nil];
+    STAssertTrue([result isEqualToArray:expected], nil);
+    
+    result = [@"https://www.httpdomain.com" arrayWithMatchedRegex:@"(https|(http\\w+))"];
+    expected = [NSArray arrayWithObjects:
+                @"https",
+                @"httpdomain",
+                nil];
     STAssertTrue([result isEqualToArray:expected], nil);
 }
 

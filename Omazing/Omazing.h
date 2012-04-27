@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "NSArray+Omazing.h"
+#import "NSString+Omazing.h"
 
 @interface Omazing : NSObject
 
