@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C35ADDAC1551095F005A0F49 /* NSURL+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C35ADDAA1551095F005A0F49 /* NSURL+Omazing.h */; };
+		C35ADDAD1551095F005A0F49 /* NSURL+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C35ADDAB1551095F005A0F49 /* NSURL+Omazing.m */; };
 		C37B4090153A871D00AF4AFE /* NSString+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C37B408E153A871D00AF4AFE /* NSString+Omazing.h */; };
 		C37B4091153A871D00AF4AFE /* NSString+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C37B408F153A871D00AF4AFE /* NSString+Omazing.m */; };
+		C38BEDC6154BCC1A00076443 /* NSError+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C38BEDC4154BCC1A00076443 /* NSError+Omazing.h */; };
+		C38BEDC7154BCC1A00076443 /* NSError+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C38BEDC5154BCC1A00076443 /* NSError+Omazing.m */; };
 		C38C2AB815373F2F00424A0D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38C2AB715373F2F00424A0D /* Cocoa.framework */; };
 		C38C2AC215373F2F00424A0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C38C2AC015373F2F00424A0D /* InfoPlist.strings */; };
 		C38C2AC615373F2F00424A0D /* Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C2AC515373F2F00424A0D /* Omazing.m */; };
@@ -32,9 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C35ADDAA1551095F005A0F49 /* NSURL+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Omazing.h"; sourceTree = "<group>"; };
+		C35ADDAB1551095F005A0F49 /* NSURL+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Omazing.m"; sourceTree = "<group>"; };
 		C37B408C153955D400AF4AFE /* OMZCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OMZCommon.h; sourceTree = "<group>"; };
 		C37B408E153A871D00AF4AFE /* NSString+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Omazing.h"; sourceTree = "<group>"; };
 		C37B408F153A871D00AF4AFE /* NSString+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Omazing.m"; sourceTree = "<group>"; };
+		C38BEDC4154BCC1A00076443 /* NSError+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Omazing.h"; sourceTree = "<group>"; };
+		C38BEDC5154BCC1A00076443 /* NSError+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Omazing.m"; sourceTree = "<group>"; };
 		C38C2AB415373F2F00424A0D /* Omazing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Omazing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38C2AB715373F2F00424A0D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C38C2ABA15373F2F00424A0D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -121,12 +129,16 @@
 			children = (
 				C38C2AEA1537416C00424A0D /* NSArray+Omazing.h */,
 				C38C2AEB1537416C00424A0D /* NSArray+Omazing.m */,
+				C38BEDC4154BCC1A00076443 /* NSError+Omazing.h */,
+				C38BEDC5154BCC1A00076443 /* NSError+Omazing.m */,
 				C37B408E153A871D00AF4AFE /* NSString+Omazing.h */,
 				C37B408F153A871D00AF4AFE /* NSString+Omazing.m */,
 				C38C2AC415373F2F00424A0D /* Omazing.h */,
 				C38C2AC515373F2F00424A0D /* Omazing.m */,
 				C37B408C153955D400AF4AFE /* OMZCommon.h */,
 				C38C2ABE15373F2F00424A0D /* Supporting Files */,
+				C35ADDAA1551095F005A0F49 /* NSURL+Omazing.h */,
+				C35ADDAB1551095F005A0F49 /* NSURL+Omazing.m */,
 			);
 			path = Omazing;
 			sourceTree = "<group>";
@@ -169,6 +181,8 @@
 			files = (
 				C38C2AEC1537416C00424A0D /* NSArray+Omazing.h in Headers */,
 				C37B4090153A871D00AF4AFE /* NSString+Omazing.h in Headers */,
+				C38BEDC6154BCC1A00076443 /* NSError+Omazing.h in Headers */,
+				C35ADDAC1551095F005A0F49 /* NSURL+Omazing.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +295,8 @@
 				C38C2AC615373F2F00424A0D /* Omazing.m in Sources */,
 				C38C2AED1537416C00424A0D /* NSArray+Omazing.m in Sources */,
 				C37B4091153A871D00AF4AFE /* NSString+Omazing.m in Sources */,
+				C38BEDC7154BCC1A00076443 /* NSError+Omazing.m in Sources */,
+				C35ADDAD1551095F005A0F49 /* NSURL+Omazing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

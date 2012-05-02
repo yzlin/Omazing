@@ -10,6 +10,8 @@
 
 #import "NSArray+Omazing.h"
 #import "NSString+Omazing.h"
+#import "NSError+Omazing.h"
+#import "NSURL+Omazing.h"
 
 @interface Omazing : NSObject
 
