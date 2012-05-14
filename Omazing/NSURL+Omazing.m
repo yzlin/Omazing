@@ -10,7 +10,8 @@
 
 @implementation NSURL (Omazing)
 
-+ (NSURL *)URLByAddingPercentEscapesWithString:(NSString *)URLString {
++ (NSURL *)URLByAddingPercentEscapesWithString:(NSString *)URLString
+{
     return [NSURL URLWithString:[URLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 

@@ -10,7 +10,8 @@
 
 @implementation NSError (Omazing)
 
-+ (NSError *)errorWithDomain:(NSString *)domain code:(NSInteger)code description:(NSString *)desc {
++ (NSError *)errorWithDomain:(NSString *)domain code:(NSInteger)code description:(NSString *)desc
+{
     NSDictionary *infoDict = [NSDictionary dictionaryWithObjectsAndKeys:desc, NSLocalizedDescriptionKey, nil];
 
     return [[[NSError alloc] initWithDomain:domain

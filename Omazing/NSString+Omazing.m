@@ -12,15 +12,18 @@
 
 @implementation NSString (Omazing)
 
-+ (BOOL)isNilOrEmpty:(NSString *)str {
++ (BOOL)isNilOrEmpty:(NSString *)str
+{
     return str == nil || str.length == 0;
 }
 
-+ (NSString *)uuid {
++ (NSString *)uuid
+{
     return [[NSProcessInfo processInfo] globallyUniqueString];
 }
 
-- (NSArray *)arrayWithMatchedRegex:(NSString *)pattern {
+- (NSArray *)arrayWithMatchedRegex:(NSString *)pattern
+{
     NSError *err = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern
                                                                            options:0
@@ -31,7 +34,7 @@
     NSArray *matches = [regex matchesInString:self
                                       options:0
                                         range:NSMakeRange(0, self.length)];
-    NSMutableArray *results = [[NSMutableArray alloc] initWithCapacity:[matches count]];
+    NSMutableArray *results = [[NSMutableArray alloc] initWithCapacity:matches.count];
     for (NSTextCheckingResult *match in matches) {
         NSString *matchedStr = [self substringWithRange:match.range];
         [results addObject:matchedStr];
@@ -40,7 +43,8 @@
     return [results autorelease];
 }
 
-- (BOOL)isMatchRegex:(NSString *)pattern {
+- (BOOL)isMatchRegex:(NSString *)pattern
+{
     NSError *err = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern
                                                                            options:0
@@ -54,7 +58,8 @@
     return n > 0;
 }
 
-- (NSString *)md5 {
+- (NSString *)md5
+{
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_MD5_DIGEST_LENGTH];
 
@@ -69,7 +74,8 @@
     return output;
 }
 
-- (NSString *)sha1 {
+- (NSString *)sha1
+{
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
 
@@ -84,7 +90,8 @@
     return output;
 }
 
-- (NSString *)sha256 {
+- (NSString *)sha256
+{
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];
 

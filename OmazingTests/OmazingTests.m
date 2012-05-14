@@ -15,7 +15,8 @@
 @synthesize testArray = testArray_;
 @synthesize testNumArray = testNumArray_;
 
-- (void)setUp {
+- (void)setUp
+{
     [super setUp];
 
     testArray_ = [[NSArray arrayWithObjects:@"a:one", @"b:two", @"a:three", @"b:four", nil] retain];
@@ -27,7 +28,8 @@
                       [NSNumber numberWithInt:5], nil] retain];
 }
 
-- (void)tearDown {
+- (void)tearDown
+{
     [testArray_ release];
     testArray_ = nil;
     [testNumArray_ release];
@@ -40,7 +42,8 @@
  * NSArray Extension Test
  */
 
-- (void)testNSArray_Base {
+- (void)testNSArray_Base
+{
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
     const NSString *desc = @"Should throw exception when block is nil.";
@@ -54,21 +57,24 @@
     STAssertThrowsSpecificNamed([self.testArray uniq:nil], NSException, NSInvalidArgumentException, desc);
 }
 
-- (void)testNSArray_All {
+- (void)testNSArray_All
+{
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
     STAssertTrue([self.testNumArray all:^BOOL(id x) { return [x intValue] < 10; }], nil);
     STAssertFalse([self.testNumArray all:^BOOL(id x) { return [x intValue] > 3; }], nil);
 }
 
-- (void)testNSArray_Any {
+- (void)testNSArray_Any
+{
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
     STAssertFalse([self.testNumArray any:^BOOL(id x) { return [x intValue] > 10; }], nil);
     STAssertTrue([self.testNumArray any:^BOOL(id x) { return [x intValue] > 3; }], nil);
 }
 
-- (void)testNSArray_Map {
+- (void)testNSArray_Map
+{
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
     NSArray *result = nil;
@@ -95,7 +101,8 @@
     STAssertTrue([result isEqualToArray:expected], nil);
 }
 
-- (void)testNSArray_Reduce {
+- (void)testNSArray_Reduce
+{
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
     STAssertEquals([self.testNumArray reduce:^NSNumber *(NSNumber *x, NSNumber *y) {
@@ -107,7 +114,8 @@
     }], nil);
 }
 
-- (void)testNSArray_Filter {
+- (void)testNSArray_Filter
+{
     NSArray *result = nil;
     NSArray *expected = nil;
 
@@ -131,14 +139,16 @@
     STAssertTrue([result isEqualToArray:expected], nil);
 }
 
-- (void)testNSArray_FirstMatch {
+- (void)testNSArray_FirstMatch
+{
     STAssertNil([self.testNumArray firstMatch:^BOOL(NSNumber *x) { return NO; }], nil);
     STAssertNil([self.testArray firstMatch:^BOOL(NSString *x) { return [x hasPrefix:@"NoSuchPrefix"]; }], nil);
     STAssertEquals([self.testNumArray firstMatch:^BOOL(NSNumber *x) { return [x intValue] == 2; }], [NSNumber numberWithInt:2], nil);
     STAssertEquals([self.testArray firstMatch:^BOOL(NSString *x) { return [x hasPrefix:@"a:"]; }], @"a:one", nil);
 }
 
-- (void)testNSArray_Zip {
+- (void)testNSArray_Zip
+{
     NSArray *result = nil;
     NSArray *expected = nil;
 
@@ -188,7 +198,8 @@
     STAssertTrue([result isEqualToArray:expected], nil);
 }
 
-- (void)testNSArray_Uniq {
+- (void)testNSArray_Uniq
+{
     NSArray *result = nil;
     NSArray *expected = nil;
 
@@ -210,15 +221,17 @@
  * NSString Extension Test
  */
 
-- (void)testNSString_Base {
+- (void)testNSString_Base
+{
     STAssertTrue([NSString isNilOrEmpty:nil], nil);
     STAssertTrue([NSString isNilOrEmpty:@""], nil);
 }
 
-- (void)testNSString_ArrayWithMatchedRegex {
+- (void)testNSString_ArrayWithMatchedRegex
+{
     NSArray *result = nil;
     NSArray *expected = nil;
-    
+
     result = [@"https://www.httpdomain.com" arrayWithMatchedRegex:@"https?"];
     expected = [NSArray arrayWithObjects:
                 @"https",
@@ -234,13 +247,37 @@
                 @"com",
                 nil];
     STAssertTrue([result isEqualToArray:expected], nil);
-    
+
     result = [@"https://www.httpdomain.com" arrayWithMatchedRegex:@"(https|(http\\w+))"];
     expected = [NSArray arrayWithObjects:
                 @"https",
                 @"httpdomain",
                 nil];
     STAssertTrue([result isEqualToArray:expected], nil);
+}
+
+/*
+ * NSURL Extension Test
+ */
+
+- (void)testNSURL_Base
+{
+    STAssertNil([NSURL URLByAddingPercentEscapesWithString:nil], nil);
+    STAssertNotNil([NSURL URLByAddingPercentEscapesWithString:@""], nil);
+}
+
+- (void)testNSURL_URLByAddingPercentEscapesWithString
+{
+    NSURL *result = nil;
+    NSURL *expect = nil;
+
+    STAssertNotNil([NSURL URLByAddingPercentEscapesWithString:@"http://www.google.com"], nil);
+    result = [NSURL URLByAddingPercentEscapesWithString:@"http://www.google.com"];
+    expect = [NSURL URLWithString:@"http://www.google.com"];
+    STAssertTrue([result isEqualTo:expect], nil);
+    result = [NSURL URLByAddingPercentEscapesWithString:@"http://www.google.com/?test= abc 123"];
+    expect = [NSURL URLWithString:@"http://www.google.com/?test=%20abc%20123"];
+    STAssertTrue([result isEqualTo:expect], nil);
 }
 
 @end

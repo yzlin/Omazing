@@ -6,13 +6,14 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "OMZCommon.h"
+#import "OMZUtils.h"
 
 #import "NSArray+Omazing.h"
 
 @implementation NSArray (Omazing)
 
-- (BOOL)any:(BOOL (^)(id))block {
+- (BOOL)any:(BOOL (^)(id))block
+{
     OMZ_NIL_BLOCK_CHECK(block);
 
     for (id obj in self) {
@@ -24,7 +25,8 @@
     return NO;
 }
 
-- (BOOL)all:(BOOL (^)(id))block {
+- (BOOL)all:(BOOL (^)(id))block
+{
     OMZ_NIL_BLOCK_CHECK(block);
 
     for (id obj in self) {
@@ -36,10 +38,11 @@
     return YES;
 }
 
-- (NSArray *)map:(id (^)(id))block {
+- (NSArray *)map:(id (^)(id))block
+{
     OMZ_NIL_BLOCK_CHECK(block);
 
-    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[self count]];
+    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:self.count];
     for (id obj in self) {
         id value = block(obj);
         [result addObject:(value ? value : [NSNull null])];
@@ -48,7 +51,8 @@
     return [result autorelease];
 }
 
-- (id)reduce:(id (^)(id, id))block {
+- (id)reduce:(id (^)(id, id))block
+{
     OMZ_NIL_BLOCK_CHECK(block);
 
     id result = nil;
@@ -57,7 +61,7 @@
         result = [[self objectAtIndex:0] copy];
     } else if ([self count] > 1) {
         result = block([self objectAtIndex:0], [self objectAtIndex:1]);
-        for (id obj in [self subarrayWithRange:NSMakeRange(2, [self count] - 2)]) {
+        for (id obj in [self subarrayWithRange:NSMakeRange(2, self.count - 2)]) {
             result = block(result, obj);
         }
     }
@@ -65,10 +69,11 @@
     return [result autorelease];
 }
 
-- (NSArray *)filter:(BOOL (^)(id))block {
+- (NSArray *)filter:(BOOL (^)(id))block
+{
     OMZ_NIL_BLOCK_CHECK(block);
 
-    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[self count]];
+    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:self.count];
     for (id obj in self) {
         if (block(obj)) {
             [result addObject:obj];
@@ -78,7 +83,8 @@
     return [result autorelease];
 }
 
-- (id)firstMatch:(BOOL(^)(id))block {
+- (id)firstMatch:(BOOL(^)(id))block
+{
     OMZ_NIL_BLOCK_CHECK(block);
 
     for (id obj in self) {
@@ -90,10 +96,11 @@
     return nil;
 }
 
-- (NSArray *)zip:(NSArray *)other with:(id (^)(id, id))block {
+- (NSArray *)zip:(NSArray *)other with:(id (^)(id, id))block
+{
     OMZ_NIL_BLOCK_CHECK(block);
 
-    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:MIN([self count], [self count])];
+    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:MIN(self.count, self.count)];
 
     NSEnumerator *selfEnumerator = [self objectEnumerator];
     NSEnumerator *otherEnumerator = [other objectEnumerator];
@@ -108,7 +115,8 @@
     return [result autorelease];
 }
 
-- (NSArray *)uniq:(id (^)(id))block {
+- (NSArray *)uniq:(id (^)(id))block
+{
     OMZ_NIL_BLOCK_CHECK(block);
 
     NSMutableDictionary *dict = [NSMutableDictionary new];

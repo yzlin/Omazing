@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C35ADDAC1551095F005A0F49 /* NSURL+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C35ADDAA1551095F005A0F49 /* NSURL+Omazing.h */; };
 		C35ADDAD1551095F005A0F49 /* NSURL+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C35ADDAB1551095F005A0F49 /* NSURL+Omazing.m */; };
+		C37AE5641560EE6700A8943A /* OMZUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C37AE5621560EE6700A8943A /* OMZUtils.h */; };
+		C37AE5651560EE6700A8943A /* OMZUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C37AE5631560EE6700A8943A /* OMZUtils.m */; };
 		C37B4090153A871D00AF4AFE /* NSString+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C37B408E153A871D00AF4AFE /* NSString+Omazing.h */; };
 		C37B4091153A871D00AF4AFE /* NSString+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C37B408F153A871D00AF4AFE /* NSString+Omazing.m */; };
 		C38BEDC6154BCC1A00076443 /* NSError+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C38BEDC4154BCC1A00076443 /* NSError+Omazing.h */; };
@@ -38,7 +40,8 @@
 /* Begin PBXFileReference section */
 		C35ADDAA1551095F005A0F49 /* NSURL+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Omazing.h"; sourceTree = "<group>"; };
 		C35ADDAB1551095F005A0F49 /* NSURL+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Omazing.m"; sourceTree = "<group>"; };
-		C37B408C153955D400AF4AFE /* OMZCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OMZCommon.h; sourceTree = "<group>"; };
+		C37AE5621560EE6700A8943A /* OMZUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMZUtils.h; sourceTree = "<group>"; };
+		C37AE5631560EE6700A8943A /* OMZUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMZUtils.m; sourceTree = "<group>"; };
 		C37B408E153A871D00AF4AFE /* NSString+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Omazing.h"; sourceTree = "<group>"; };
 		C37B408F153A871D00AF4AFE /* NSString+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Omazing.m"; sourceTree = "<group>"; };
 		C38BEDC4154BCC1A00076443 /* NSError+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Omazing.h"; sourceTree = "<group>"; };
@@ -133,12 +136,13 @@
 				C38BEDC5154BCC1A00076443 /* NSError+Omazing.m */,
 				C37B408E153A871D00AF4AFE /* NSString+Omazing.h */,
 				C37B408F153A871D00AF4AFE /* NSString+Omazing.m */,
-				C38C2AC415373F2F00424A0D /* Omazing.h */,
-				C38C2AC515373F2F00424A0D /* Omazing.m */,
-				C37B408C153955D400AF4AFE /* OMZCommon.h */,
-				C38C2ABE15373F2F00424A0D /* Supporting Files */,
 				C35ADDAA1551095F005A0F49 /* NSURL+Omazing.h */,
 				C35ADDAB1551095F005A0F49 /* NSURL+Omazing.m */,
+				C38C2AC415373F2F00424A0D /* Omazing.h */,
+				C38C2AC515373F2F00424A0D /* Omazing.m */,
+				C37AE5621560EE6700A8943A /* OMZUtils.h */,
+				C37AE5631560EE6700A8943A /* OMZUtils.m */,
+				C38C2ABE15373F2F00424A0D /* Supporting Files */,
 			);
 			path = Omazing;
 			sourceTree = "<group>";
@@ -183,6 +187,7 @@
 				C37B4090153A871D00AF4AFE /* NSString+Omazing.h in Headers */,
 				C38BEDC6154BCC1A00076443 /* NSError+Omazing.h in Headers */,
 				C35ADDAC1551095F005A0F49 /* NSURL+Omazing.h in Headers */,
+				C37AE5641560EE6700A8943A /* OMZUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +302,7 @@
 				C37B4091153A871D00AF4AFE /* NSString+Omazing.m in Sources */,
 				C38BEDC7154BCC1A00076443 /* NSError+Omazing.m in Sources */,
 				C35ADDAD1551095F005A0F49 /* NSURL+Omazing.m in Sources */,
+				C37AE5651560EE6700A8943A /* OMZUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
