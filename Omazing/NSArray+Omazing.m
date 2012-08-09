@@ -3,7 +3,7 @@
 //  Omazing
 //
 //  Created by Ethan Lin on 4/13/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 github.com/yzlin. All rights reserved.
 //
 
 #import "OMZUtils.h"
@@ -58,7 +58,7 @@
     id result = nil;
 
     if ([self count] == 1) {
-        result = [[self objectAtIndex:0] copy];
+        result = [[[self objectAtIndex:0] copy] autorelease];
     } else if ([self count] > 1) {
         result = block([self objectAtIndex:0], [self objectAtIndex:1]);
         for (id obj in [self subarrayWithRange:NSMakeRange(2, self.count - 2)]) {
@@ -66,7 +66,7 @@
         }
     }
 
-    return [result autorelease];
+    return result;
 }
 
 - (NSArray *)filter:(BOOL (^)(id))block
@@ -100,7 +100,7 @@
 {
     OMZ_NIL_BLOCK_CHECK(block);
 
-    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:MIN(self.count, self.count)];
+    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:MIN(self.count, other.count)];
 
     NSEnumerator *selfEnumerator = [self objectEnumerator];
     NSEnumerator *otherEnumerator = [other objectEnumerator];

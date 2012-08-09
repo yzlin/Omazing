@@ -3,7 +3,7 @@
 //  Omazing
 //
 //  Created by Ethan Lin on 4/15/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 github.com/yzlin. All rights reserved.
 //
 
 #import <CommonCrypto/CommonDigest.h>
@@ -63,7 +63,8 @@
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_MD5_DIGEST_LENGTH];
 
-    CC_MD5(data.bytes, data.length, digest);
+    NSNumber *len = [NSNumber numberWithUnsignedInteger:data.length];
+    CC_MD5(data.bytes, [len unsignedIntValue], digest);
 
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
 
@@ -79,7 +80,8 @@
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
 
-    CC_SHA1(data.bytes, data.length, digest);
+    NSNumber *len = [NSNumber numberWithUnsignedInteger:data.length];
+    CC_SHA1(data.bytes, [len unsignedIntValue], digest);
 
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
 
@@ -95,7 +97,8 @@
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];
 
-    CC_SHA256(data.bytes, data.length, digest);
+    NSNumber *len = [NSNumber numberWithUnsignedInteger:data.length];
+    CC_SHA256(data.bytes, [len unsignedIntValue], digest);
 
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH * 2];
 
@@ -110,7 +113,8 @@
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_SHA512_DIGEST_LENGTH];
 
-    CC_SHA512(data.bytes, data.length, digest);
+    NSNumber *len = [NSNumber numberWithUnsignedInteger:data.length];
+    CC_SHA512(data.bytes, [len unsignedIntValue], digest);
 
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA512_DIGEST_LENGTH * 2];
 
