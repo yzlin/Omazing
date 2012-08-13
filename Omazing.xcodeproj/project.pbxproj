@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D7DEEAED721410F9B6D80F2 /* libPods-OmazingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A81F9D05135643EFA40C785A /* libPods-OmazingTests.a */; };
+		C3267D3315D90FFD00DF1923 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3267D3115D90FFD00DF1923 /* Localizable.strings */; };
+		C3267D4915D9146000DF1923 /* NSBundle+OmazingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3267D4815D9146000DF1923 /* NSBundle+OmazingTests.m */; };
 		C3438CA315D385A900434683 /* NSBundle+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C3438CA115D385A900434683 /* NSBundle+Omazing.h */; };
 		C3438CA415D385A900434683 /* NSBundle+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C3438CA215D385A900434683 /* NSBundle+Omazing.m */; };
 		C3438CBC15D3870400434683 /* NSArray+OmazingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3438CBB15D3870400434683 /* NSArray+OmazingTests.m */; };
@@ -30,6 +32,9 @@
 		C38C2AD815373F2F00424A0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C38C2AD615373F2F00424A0D /* InfoPlist.strings */; };
 		C38C2AEC1537416C00424A0D /* NSArray+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C38C2AEA1537416C00424A0D /* NSArray+Omazing.h */; };
 		C38C2AED1537416C00424A0D /* NSArray+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C2AEB1537416C00424A0D /* NSArray+Omazing.m */; };
+		C3E91DF215D95DB50001A8EB /* Localizable.en.strings in Copy "fakebrand" Files */ = {isa = PBXBuildFile; fileRef = C3E91DED15D95B6D0001A8EB /* Localizable.en.strings */; };
+		C3E91DF715D969660001A8EB /* Localizable.en.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3E91DF615D969660001A8EB /* Localizable.en.strings */; };
+		C3E91DF915D96AA40001A8EB /* Localizable.en.strings in Copy Default Brand Files */ = {isa = PBXBuildFile; fileRef = C3E91DF615D969660001A8EB /* Localizable.en.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +47,36 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C3E91DF115D95D730001A8EB /* Copy "fakebrand" Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = brand/fakebrand;
+			dstSubfolderSpec = 7;
+			files = (
+				C3E91DF215D95DB50001A8EB /* Localizable.en.strings in Copy "fakebrand" Files */,
+			);
+			name = "Copy \"fakebrand\" Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3E91DF815D96A460001A8EB /* Copy Default Brand Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = brand/_default;
+			dstSubfolderSpec = 7;
+			files = (
+				C3E91DF915D96AA40001A8EB /* Localizable.en.strings in Copy Default Brand Files */,
+			);
+			name = "Copy Default Brand Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7BF8A5090E1248EDAF494D63 /* Pods-OmazingTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmazingTests.xcconfig"; path = "Pods/Pods-OmazingTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		A81F9D05135643EFA40C785A /* libPods-OmazingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OmazingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3267D3215D90FFD00DF1923 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C3267D4815D9146000DF1923 /* NSBundle+OmazingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+OmazingTests.m"; sourceTree = "<group>"; };
 		C3438CA115D385A900434683 /* NSBundle+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Omazing.h"; sourceTree = "<group>"; };
 		C3438CA215D385A900434683 /* NSBundle+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Omazing.m"; sourceTree = "<group>"; };
 		C3438CBB15D3870400434683 /* NSArray+OmazingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+OmazingTests.m"; sourceTree = "<group>"; };
@@ -74,6 +106,8 @@
 		C38C2AD715373F2F00424A0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C38C2AEA1537416C00424A0D /* NSArray+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Omazing.h"; sourceTree = "<group>"; };
 		C38C2AEB1537416C00424A0D /* NSArray+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Omazing.m"; sourceTree = "<group>"; };
+		C3E91DED15D95B6D0001A8EB /* Localizable.en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.en.strings; sourceTree = "<group>"; };
+		C3E91DF615D969660001A8EB /* Localizable.en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.en.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,10 +209,13 @@
 		C38C2AD315373F2F00424A0D /* OmazingTests */ = {
 			isa = PBXGroup;
 			children = (
+				C3E91DEB15D95B6D0001A8EB /* brand */,
 				C3438CBB15D3870400434683 /* NSArray+OmazingTests.m */,
 				C3438CBD15D38A6600434683 /* NSString+OmazingTests.m */,
 				C3438CDC15D4050E00434683 /* NSURL+OmazingTests.m */,
+				C3267D4815D9146000DF1923 /* NSBundle+OmazingTests.m */,
 				C38C2AD415373F2F00424A0D /* Supporting Files */,
+				C3267D3115D90FFD00DF1923 /* Localizable.strings */,
 			);
 			path = OmazingTests;
 			sourceTree = "<group>";
@@ -190,6 +227,31 @@
 				C38C2AD615373F2F00424A0D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3E91DEB15D95B6D0001A8EB /* brand */ = {
+			isa = PBXGroup;
+			children = (
+				C3E91DF515D969660001A8EB /* _default */,
+				C3E91DEC15D95B6D0001A8EB /* fakebrand */,
+			);
+			path = brand;
+			sourceTree = "<group>";
+		};
+		C3E91DEC15D95B6D0001A8EB /* fakebrand */ = {
+			isa = PBXGroup;
+			children = (
+				C3E91DED15D95B6D0001A8EB /* Localizable.en.strings */,
+			);
+			path = fakebrand;
+			sourceTree = "<group>";
+		};
+		C3E91DF515D969660001A8EB /* _default */ = {
+			isa = PBXGroup;
+			children = (
+				C3E91DF615D969660001A8EB /* Localizable.en.strings */,
+			);
+			path = _default;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +300,8 @@
 				C38C2AC915373F2F00424A0D /* Resources */,
 				C38C2ACA15373F2F00424A0D /* ShellScript */,
 				F6487DF6D2DD4A10BFACA5DA /* Copy Pods Resources */,
+				C3E91DF815D96A460001A8EB /* Copy Default Brand Files */,
+				C3E91DF115D95D730001A8EB /* Copy "fakebrand" Files */,
 			);
 			buildRules = (
 			);
@@ -290,6 +354,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38C2AD815373F2F00424A0D /* InfoPlist.strings in Resources */,
+				C3267D3315D90FFD00DF1923 /* Localizable.strings in Resources */,
+				C3E91DF715D969660001A8EB /* Localizable.en.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +413,7 @@
 				C3438CBC15D3870400434683 /* NSArray+OmazingTests.m in Sources */,
 				C3438CBE15D38A6600434683 /* NSString+OmazingTests.m in Sources */,
 				C3438CDD15D4050E00434683 /* NSURL+OmazingTests.m in Sources */,
+				C3267D4915D9146000DF1923 /* NSBundle+OmazingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +428,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C3267D3115D90FFD00DF1923 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3267D3215D90FFD00DF1923 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C38C2AC015373F2F00424A0D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

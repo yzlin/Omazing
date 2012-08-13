@@ -1,5 +1,5 @@
 //
-//  NSString+OmazingTests.m
+//  NSURL+OmazingTests.m
 //  Omazing
 //
 //  Created by Ethan Lin on 8/9/12.

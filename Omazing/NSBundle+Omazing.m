@@ -16,7 +16,7 @@
 
 static char brandAssociatedKey;
 
-+ (void)initialize
++ (void)load
 {
     [Omazing swizzleMethod:@selector(localizedStringForKey:value:table:)
                       with:@selector(_localizedStringForKey:value:table:)
@@ -55,24 +55,16 @@ static char brandAssociatedKey;
     BOOL isDirectory;
 
     if ([self.brand length] > 0) {
-        NSString *brandLanguagePath = [[self bundlePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"brand/%@/%@.lproj/%@.strings", self.brand, languageID, tableName]];
+        NSString *brandLanguagePath = [[self resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"brand/%@/%@.%@.strings", self.brand, tableName, languageID]];
         if ([fileMgr fileExistsAtPath:brandLanguagePath isDirectory:&isDirectory] && !isDirectory) {
-            NSString *tablePath = [self pathForResource:languageID
-                                                 ofType:@"strings"
-                                            inDirectory:[brandLanguagePath stringByDeletingLastPathComponent]
-                                        forLocalization:languageID];
-            NSDictionary *table = [NSDictionary dictionaryWithContentsOfFile:tablePath];
+            NSDictionary *table = [NSDictionary dictionaryWithContentsOfFile:brandLanguagePath];
             localizedString = [table objectForKey:key];
         }
     }
 
-    NSString *defaultLanguagePath = [[self bundlePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"brand/_default/%@.lproj/%@.strings", languageID, tableName]];
+    NSString *defaultLanguagePath = [[self resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"brand/_default/%@.%@.strings", tableName, languageID]];
     if (!localizedString && [fileMgr fileExistsAtPath:defaultLanguagePath isDirectory:&isDirectory] && !isDirectory) {
-        NSString *tablePath = [self pathForResource:languageID
-                                             ofType:@"strings"
-                                        inDirectory:[defaultLanguagePath stringByDeletingLastPathComponent]
-                                    forLocalization:languageID];
-        NSDictionary *table = [NSDictionary dictionaryWithContentsOfFile:tablePath];
+        NSDictionary *table = [NSDictionary dictionaryWithContentsOfFile:defaultLanguagePath];
         localizedString = [table objectForKey:key];
     }
 

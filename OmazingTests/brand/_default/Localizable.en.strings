@@ -1,0 +1,10 @@
+/*
+  en.strings
+  OmazingTests
+
+  Created by Ethan Lin on 8/13/12.
+  Copyright (c) 2012 github.com/yzlin. All rights reserved.
+*/
+
+/* test */
+"World" = "#_default#en#World#";

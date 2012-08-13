@@ -1,0 +1,10 @@
+/*
+  Localizable.strings
+  OmazingTests
+
+  Created by Ethan Lin on 8/13/12.
+  Copyright (c) 2012 github.com/yzlin. All rights reserved.
+*/
+
+/* test */
+"Hello" = "#orig#en#Hello#";
