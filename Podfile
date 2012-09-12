@@ -1,6 +1,6 @@
 platform :osx
 
-target :OmazingTests, :excludisve => true do
+target :OmazingTests, :exclusive => true do
     pod 'Specta'
     pod 'Expecta'
 end

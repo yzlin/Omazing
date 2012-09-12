@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author       = { 'Yi-Jheng Lin' => 'yzlin1985@gmail.com' }
   s.source       = { :git => 'https://github.com/yzlin/Omazing.git', :tag => '0.0.1' }
   s.source_files = 'Omazing/**/*.{h,m}'
-  s.public_header_files = 'Omazing/Omazing.h'
+  s.public_header_files = 'Omazing/*.h'
   s.preserve_paths = 'Omazing'
   s.framework  = 'Cocoa'
 end
