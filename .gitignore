@@ -16,3 +16,7 @@ xcuserdata/
 buile/
 *.[oa]
 *.pyc
+
+# CocoaPods
+Podfile.lock
+Pods/
