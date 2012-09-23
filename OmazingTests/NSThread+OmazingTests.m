@@ -50,6 +50,8 @@ describe(@"NSThread", ^{
 
     afterEach(^{
         [workerThread cancel];
+        [workerThread autorelease];
+        workerThread = nil;
     });
 
     afterAll(^{
