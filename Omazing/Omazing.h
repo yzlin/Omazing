@@ -13,6 +13,7 @@
 #import "NSBundle+Omazing.h"
 #import "NSError+Omazing.h"
 #import "NSString+Omazing.h"
+#import "NSThread+Omazing.h"
 #import "NSURL+Omazing.h"
 
 @interface Omazing : NSObject
