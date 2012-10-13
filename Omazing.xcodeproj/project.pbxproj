@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D7DEEAED721410F9B6D80F2 /* libPods-OmazingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A81F9D05135643EFA40C785A /* libPods-OmazingTests.a */; };
+		54047898E9C34CCB9F51F2F0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01053E3FDBFB4D5793F14609 /* libPods.a */; };
 		C3267D3315D90FFD00DF1923 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3267D3115D90FFD00DF1923 /* Localizable.strings */; };
 		C3267D4915D9146000DF1923 /* NSBundle+OmazingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3267D4815D9146000DF1923 /* NSBundle+OmazingTests.m */; };
 		C3438CA315D385A900434683 /* NSBundle+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C3438CA115D385A900434683 /* NSBundle+Omazing.h */; };
@@ -32,6 +33,8 @@
 		C38C2AD815373F2F00424A0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C38C2AD615373F2F00424A0D /* InfoPlist.strings */; };
 		C38C2AEC1537416C00424A0D /* NSArray+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C38C2AEA1537416C00424A0D /* NSArray+Omazing.h */; };
 		C38C2AED1537416C00424A0D /* NSArray+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C2AEB1537416C00424A0D /* NSArray+Omazing.m */; };
+		C3CBB3A2161F16460040E3E8 /* NSData+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C3CBB3A0161F16460040E3E8 /* NSData+Omazing.h */; };
+		C3CBB3A3161F16460040E3E8 /* NSData+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CBB3A1161F16460040E3E8 /* NSData+Omazing.m */; };
 		C3E91DF215D95DB50001A8EB /* Localizable.en.strings in Copy "fakebrand" Files */ = {isa = PBXBuildFile; fileRef = C3E91DED15D95B6D0001A8EB /* Localizable.en.strings */; };
 		C3E91DF715D969660001A8EB /* Localizable.en.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3E91DF615D969660001A8EB /* Localizable.en.strings */; };
 		C3E91DF915D96AA40001A8EB /* Localizable.en.strings in Copy Default Brand Files */ = {isa = PBXBuildFile; fileRef = C3E91DF615D969660001A8EB /* Localizable.en.strings */; };
@@ -76,7 +79,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01053E3FDBFB4D5793F14609 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF8A5090E1248EDAF494D63 /* Pods-OmazingTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmazingTests.xcconfig"; path = "Pods/Pods-OmazingTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		99FFF18D745E4EB9BF606919 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A81F9D05135643EFA40C785A /* libPods-OmazingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OmazingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3267D3215D90FFD00DF1923 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C3267D4815D9146000DF1923 /* NSBundle+OmazingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+OmazingTests.m"; sourceTree = "<group>"; };
@@ -109,6 +114,8 @@
 		C38C2AD715373F2F00424A0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C38C2AEA1537416C00424A0D /* NSArray+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Omazing.h"; sourceTree = "<group>"; };
 		C38C2AEB1537416C00424A0D /* NSArray+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Omazing.m"; sourceTree = "<group>"; };
+		C3CBB3A0161F16460040E3E8 /* NSData+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Omazing.h"; sourceTree = "<group>"; };
+		C3CBB3A1161F16460040E3E8 /* NSData+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Omazing.m"; sourceTree = "<group>"; };
 		C3E91DED15D95B6D0001A8EB /* Localizable.en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.en.strings; sourceTree = "<group>"; };
 		C3E91DF615D969660001A8EB /* Localizable.en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.en.strings; sourceTree = "<group>"; };
 		C3FCF70C160E20BF008AB2F0 /* NSThread+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSThread+Omazing.h"; sourceTree = "<group>"; };
@@ -122,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38C2AB815373F2F00424A0D /* Cocoa.framework in Frameworks */,
+				54047898E9C34CCB9F51F2F0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +155,7 @@
 				C38C2AB615373F2F00424A0D /* Frameworks */,
 				C38C2AB515373F2F00424A0D /* Products */,
 				7BF8A5090E1248EDAF494D63 /* Pods-OmazingTests.xcconfig */,
+				99FFF18D745E4EB9BF606919 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +175,7 @@
 				C38C2ACD15373F2F00424A0D /* SenTestingKit.framework */,
 				C38C2AB915373F2F00424A0D /* Other Frameworks */,
 				A81F9D05135643EFA40C785A /* libPods-OmazingTests.a */,
+				01053E3FDBFB4D5793F14609 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -185,6 +195,8 @@
 			children = (
 				C38C2AEA1537416C00424A0D /* NSArray+Omazing.h */,
 				C38C2AEB1537416C00424A0D /* NSArray+Omazing.m */,
+				C3CBB3A0161F16460040E3E8 /* NSData+Omazing.h */,
+				C3CBB3A1161F16460040E3E8 /* NSData+Omazing.m */,
 				C38BEDC4154BCC1A00076443 /* NSError+Omazing.h */,
 				C38BEDC5154BCC1A00076443 /* NSError+Omazing.m */,
 				C37B408E153A871D00AF4AFE /* NSString+Omazing.h */,
@@ -277,6 +289,7 @@
 				C37AE5641560EE6700A8943A /* OMZUtils.h in Headers */,
 				C3438CA315D385A900434683 /* NSBundle+Omazing.h in Headers */,
 				C3FCF70E160E20BF008AB2F0 /* NSThread+Omazing.h in Headers */,
+				C3CBB3A2161F16460040E3E8 /* NSData+Omazing.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +304,7 @@
 				C38C2AB015373F2F00424A0D /* Frameworks */,
 				C38C2AB115373F2F00424A0D /* Headers */,
 				C38C2AB215373F2F00424A0D /* Resources */,
+				42314CDDFDB945FB9FCB6300 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -372,6 +386,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		42314CDDFDB945FB9FCB6300 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		C38C2ACA15373F2F00424A0D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -414,6 +442,7 @@
 				C37AE5651560EE6700A8943A /* OMZUtils.m in Sources */,
 				C3438CA415D385A900434683 /* NSBundle+Omazing.m in Sources */,
 				C3FCF70F160E20BF008AB2F0 /* NSThread+Omazing.m in Sources */,
+				C3CBB3A3161F16460040E3E8 /* NSData+Omazing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +545,7 @@
 		};
 		C38C2ADF15373F2F00424A0D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99FFF18D745E4EB9BF606919 /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -531,6 +561,7 @@
 		};
 		C38C2AE015373F2F00424A0D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99FFF18D745E4EB9BF606919 /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;

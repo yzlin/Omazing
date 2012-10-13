@@ -11,6 +11,7 @@
 
 #import "NSArray+Omazing.h"
 #import "NSBundle+Omazing.h"
+#import "NSData+Omazing.h"
 #import "NSError+Omazing.h"
 #import "NSString+Omazing.h"
 #import "NSThread+Omazing.h"
