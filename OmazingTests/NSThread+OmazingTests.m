@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 github.com/yzlin. All rights reserved.
 //
 
-#import "Specta.h"
+#import <Specta.h>
 #define EXP_SHORTHAND
-#import "Expecta.h"
+#import <Expecta.h>
 
 #import "Omazing.h"
 
