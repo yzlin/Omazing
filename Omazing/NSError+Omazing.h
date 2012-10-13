@@ -11,5 +11,6 @@
 @interface NSError (Omazing)
 
 + (NSError *)errorWithDomain:(NSString *)domain code:(NSInteger)code description:(NSString *)description;
++ (NSError *)errorWithPOSIXCode:(int)code;
 
 @end

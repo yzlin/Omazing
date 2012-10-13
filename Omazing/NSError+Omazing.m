@@ -19,4 +19,9 @@
                                    userInfo:infoDict] autorelease];
 }
 
++ (NSError *)errorWithPOSIXCode:(int)code
+{
+    return [NSError errorWithDomain:NSPOSIXErrorDomain code:code userInfo:nil];
+}
+
 @end
