@@ -33,6 +33,10 @@
 		C38C2AD815373F2F00424A0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C38C2AD615373F2F00424A0D /* InfoPlist.strings */; };
 		C38C2AEC1537416C00424A0D /* NSArray+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C38C2AEA1537416C00424A0D /* NSArray+Omazing.h */; };
 		C38C2AED1537416C00424A0D /* NSArray+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C2AEB1537416C00424A0D /* NSArray+Omazing.m */; };
+		C39C1D5D1639A36B00292DF7 /* InfoPlist.en.strings in Resources */ = {isa = PBXBuildFile; fileRef = C39C1D5C1639A36B00292DF7 /* InfoPlist.en.strings */; };
+		C39C1D601639A3C200292DF7 /* InfoPlist.en.strings in Resources */ = {isa = PBXBuildFile; fileRef = C39C1D5F1639A3C200292DF7 /* InfoPlist.en.strings */; };
+		C39C1D611639A6A000292DF7 /* InfoPlist.en.strings in Copy "fakebrand" Files */ = {isa = PBXBuildFile; fileRef = C39C1D5F1639A3C200292DF7 /* InfoPlist.en.strings */; };
+		C39C1D631639A6AE00292DF7 /* InfoPlist.en.strings in Copy Default Brand Files */ = {isa = PBXBuildFile; fileRef = C39C1D5C1639A36B00292DF7 /* InfoPlist.en.strings */; };
 		C3CBB3A2161F16460040E3E8 /* NSData+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C3CBB3A0161F16460040E3E8 /* NSData+Omazing.h */; };
 		C3CBB3A3161F16460040E3E8 /* NSData+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CBB3A1161F16460040E3E8 /* NSData+Omazing.m */; };
 		C3E91DF215D95DB50001A8EB /* Localizable.en.strings in Copy "fakebrand" Files */ = {isa = PBXBuildFile; fileRef = C3E91DED15D95B6D0001A8EB /* Localizable.en.strings */; };
@@ -61,6 +65,7 @@
 			dstSubfolderSpec = 7;
 			files = (
 				C3E91DF215D95DB50001A8EB /* Localizable.en.strings in Copy "fakebrand" Files */,
+				C39C1D611639A6A000292DF7 /* InfoPlist.en.strings in Copy "fakebrand" Files */,
 			);
 			name = "Copy \"fakebrand\" Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +77,7 @@
 			dstSubfolderSpec = 7;
 			files = (
 				C3E91DF915D96AA40001A8EB /* Localizable.en.strings in Copy Default Brand Files */,
+				C39C1D631639A6AE00292DF7 /* InfoPlist.en.strings in Copy Default Brand Files */,
 			);
 			name = "Copy Default Brand Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +120,8 @@
 		C38C2AD715373F2F00424A0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C38C2AEA1537416C00424A0D /* NSArray+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Omazing.h"; sourceTree = "<group>"; };
 		C38C2AEB1537416C00424A0D /* NSArray+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Omazing.m"; sourceTree = "<group>"; };
+		C39C1D5C1639A36B00292DF7 /* InfoPlist.en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.en.strings; sourceTree = "<group>"; };
+		C39C1D5F1639A3C200292DF7 /* InfoPlist.en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.en.strings; sourceTree = "<group>"; };
 		C3CBB3A0161F16460040E3E8 /* NSData+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Omazing.h"; sourceTree = "<group>"; };
 		C3CBB3A1161F16460040E3E8 /* NSData+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Omazing.m"; sourceTree = "<group>"; };
 		C3E91DED15D95B6D0001A8EB /* Localizable.en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.en.strings; sourceTree = "<group>"; };
@@ -263,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				C3E91DED15D95B6D0001A8EB /* Localizable.en.strings */,
+				C39C1D5F1639A3C200292DF7 /* InfoPlist.en.strings */,
 			);
 			path = fakebrand;
 			sourceTree = "<group>";
@@ -271,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				C3E91DF615D969660001A8EB /* Localizable.en.strings */,
+				C39C1D5C1639A36B00292DF7 /* InfoPlist.en.strings */,
 			);
 			path = _default;
 			sourceTree = "<group>";
@@ -380,6 +390,8 @@
 				C38C2AD815373F2F00424A0D /* InfoPlist.strings in Resources */,
 				C3267D3315D90FFD00DF1923 /* Localizable.strings in Resources */,
 				C3E91DF715D969660001A8EB /* Localizable.en.strings in Resources */,
+				C39C1D5D1639A36B00292DF7 /* InfoPlist.en.strings in Resources */,
+				C39C1D601639A3C200292DF7 /* InfoPlist.en.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

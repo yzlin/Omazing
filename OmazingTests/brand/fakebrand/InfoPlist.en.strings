@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.en.strings
+  Omazing
+
+  Created by Ethan Lin on 10/26/12.
+  Copyright (c) 2012 github.com/yzlin. All rights reserved.
+*/
+
+CFBundleName = "#fakebrand#en#CFBundleName#";

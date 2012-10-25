@@ -18,6 +18,9 @@ static char brandAssociatedKey;
 
 + (void)load
 {
+    [Omazing swizzleMethod:@selector(localizedInfoDictionary)
+                      with:@selector(_localizedInfoDictionary)
+                        of:self];
     [Omazing swizzleMethod:@selector(localizedStringForKey:value:table:)
                       with:@selector(_localizedStringForKey:value:table:)
                         of:self];
@@ -37,6 +40,35 @@ static char brandAssociatedKey;
 
 #pragma mark Swizzled Methods
 
+- (NSDictionary *)_localizedInfoDictionary
+{
+    // Match Rules:
+    //   Get current language ID from [NSLocale preferredLanguages]: first object indicates current language ID
+    //     1) Search in specified brand
+    //     2) Search default language ID (non-branded)
+    //   If no one matched, use System Default
+
+    NSFileManager *fileMgr = [NSFileManager defaultManager];
+    NSString *languageID = [[NSLocale preferredLanguages] objectAtIndex:0];
+    BOOL isDirectory;
+
+    NSMutableDictionary *table = [NSMutableDictionary dictionaryWithDictionary:self._localizedInfoDictionary];
+
+    NSString *defaultLanguagePath = [[self resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"brand/_default/InfoPlist.%@.strings", languageID]];
+    if ([fileMgr fileExistsAtPath:defaultLanguagePath isDirectory:&isDirectory] && !isDirectory) {
+        [table addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:defaultLanguagePath]];
+    }
+
+    if (![NSString isNilOrEmpty:self.brand]) {
+        NSString *brandLanguagePath = [self.resourcePath stringByAppendingPathComponent:[NSString stringWithFormat:@"brand/%@/InfoPlist.%@.strings", self.brand, languageID]];
+        if ([fileMgr fileExistsAtPath:brandLanguagePath isDirectory:&isDirectory] && !isDirectory) {
+            [table addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:brandLanguagePath]];
+        }
+    }
+
+    return table;
+}
+
 - (NSString *)_localizedStringForKey:(NSString *)key value:(NSString *)value table:(NSString *)tableName
 {
     if ([tableName length] == 0)
@@ -54,7 +86,7 @@ static char brandAssociatedKey;
     NSString *languageID = [[NSLocale preferredLanguages] objectAtIndex:0];
     BOOL isDirectory;
 
-    if ([self.brand length] > 0) {
+    if (![NSString isNilOrEmpty:self.brand]) {
         NSString *brandLanguagePath = [[self resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"brand/%@/%@.%@.strings", self.brand, tableName, languageID]];
         if ([fileMgr fileExistsAtPath:brandLanguagePath isDirectory:&isDirectory] && !isDirectory) {
             NSDictionary *table = [NSDictionary dictionaryWithContentsOfFile:brandLanguagePath];

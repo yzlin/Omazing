@@ -12,6 +12,4 @@
 
 @property (nonatomic, retain) NSString *brand;
 
-- (NSString *)_localizedStringForKey:(NSString *)key value:(NSString *)value table:(NSString *)tableName;
-
 @end
