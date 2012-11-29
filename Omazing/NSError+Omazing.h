@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CommonCrypto/CommonCryptor.h>
+
+extern NSString * const kOMZCommonCryptoErrorDomain;
 
 @interface NSError (Omazing)
 
 + (NSError *)errorWithDomain:(NSString *)domain code:(NSInteger)code description:(NSString *)description;
 + (NSError *)errorWithPOSIXCode:(int)code;
++ (NSError *)errorWithCCCryptorStatus:(CCCryptorStatus)status;
 
 @end

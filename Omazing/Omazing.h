@@ -19,10 +19,14 @@
 
 @interface Omazing : NSObject
 
+#pragma mark - Hash
+
 + (NSString *)md5FromFile:(NSString *)filePath;
 + (NSString *)sha1FromFile:(NSString *)filePath;
 + (NSString *)sha256FromFile:(NSString *)filePath;
 + (NSString *)sha512FromFile:(NSString *)filePath;
+
+#pragma mark - Runtime method swizzling
 
 // inspired from ConciseKit
 + (BOOL)swizzleMethod:(SEL)origSelector with:(SEL)anotherSelector of:(Class)klass;
