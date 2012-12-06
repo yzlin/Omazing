@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0D7DEEAED721410F9B6D80F2 /* libPods-OmazingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A81F9D05135643EFA40C785A /* libPods-OmazingTests.a */; };
-		54047898E9C34CCB9F51F2F0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01053E3FDBFB4D5793F14609 /* libPods.a */; };
 		C3267D3315D90FFD00DF1923 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3267D3115D90FFD00DF1923 /* Localizable.strings */; };
 		C3267D4915D9146000DF1923 /* NSBundle+OmazingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3267D4815D9146000DF1923 /* NSBundle+OmazingTests.m */; };
 		C3438CA315D385A900434683 /* NSBundle+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C3438CA115D385A900434683 /* NSBundle+Omazing.h */; };
@@ -85,9 +84,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		01053E3FDBFB4D5793F14609 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF8A5090E1248EDAF494D63 /* Pods-OmazingTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmazingTests.xcconfig"; path = "Pods/Pods-OmazingTests.xcconfig"; sourceTree = SOURCE_ROOT; };
-		99FFF18D745E4EB9BF606919 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A81F9D05135643EFA40C785A /* libPods-OmazingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OmazingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3267D3215D90FFD00DF1923 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C3267D4815D9146000DF1923 /* NSBundle+OmazingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+OmazingTests.m"; sourceTree = "<group>"; };
@@ -137,7 +134,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38C2AB815373F2F00424A0D /* Cocoa.framework in Frameworks */,
-				54047898E9C34CCB9F51F2F0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +159,6 @@
 				C38C2AB615373F2F00424A0D /* Frameworks */,
 				C38C2AB515373F2F00424A0D /* Products */,
 				7BF8A5090E1248EDAF494D63 /* Pods-OmazingTests.xcconfig */,
-				99FFF18D745E4EB9BF606919 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,7 +178,6 @@
 				C38C2ACD15373F2F00424A0D /* SenTestingKit.framework */,
 				C38C2AB915373F2F00424A0D /* Other Frameworks */,
 				A81F9D05135643EFA40C785A /* libPods-OmazingTests.a */,
-				01053E3FDBFB4D5793F14609 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,7 +308,6 @@
 				C38C2AB015373F2F00424A0D /* Frameworks */,
 				C38C2AB115373F2F00424A0D /* Headers */,
 				C38C2AB215373F2F00424A0D /* Resources */,
-				42314CDDFDB945FB9FCB6300 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -398,20 +391,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		42314CDDFDB945FB9FCB6300 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-		};
 		C38C2ACA15373F2F00424A0D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -557,7 +536,6 @@
 		};
 		C38C2ADF15373F2F00424A0D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99FFF18D745E4EB9BF606919 /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -573,7 +551,6 @@
 		};
 		C38C2AE015373F2F00424A0D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99FFF18D745E4EB9BF606919 /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;

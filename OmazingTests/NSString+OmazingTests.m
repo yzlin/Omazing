@@ -96,6 +96,32 @@ describe(@"NSString", ^{
             expect([str arrayWithMatchedRegex:@"https"]).to.equal(@[]);
         });
     });
+
+    context(@"email validation", ^{
+        it(@"should return false while checking it's empty or null", ^{
+            NSString *email = @"";
+            expect([email isEmail]).to.beFalsy();
+            email = nil;
+            expect([email isEmail]).to.beFalsy();
+        });
+
+        it(@"invalid emails", ^{
+            expect([@"test" isEmail]).to.beFalsy();
+            expect([@"test@test" isEmail]).to.beFalsy();
+            expect([@"@test" isEmail]).to.beFalsy();
+            expect([@"a#asdf@test.com" isEmail]).to.beFalsy();
+            expect([@"test@test.local" isEmail]).to.beFalsy();
+            expect([@"test12+test@test.local" isEmail]).to.beFalsy();
+            expect([@"test12.test@test.local" isEmail]).to.beFalsy();
+        });
+
+        it(@"valid emails", ^{
+            expect([@"test@a.b.c.com" isEmail]).to.beTruthy();
+            expect([@"test12+test@test.com" isEmail]).to.beTruthy();
+            expect([@"test12.test@test.com" isEmail]).to.beTruthy();
+            expect([@"test123.test@example.com" isEmail]).to.beTruthy();
+        });
+    });
 });
 
 SpecEnd

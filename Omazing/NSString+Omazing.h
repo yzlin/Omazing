@@ -21,4 +21,6 @@
 - (NSString *)sha256;
 - (NSString *)sha512;
 
+- (BOOL)isEmail;
+
 @end
