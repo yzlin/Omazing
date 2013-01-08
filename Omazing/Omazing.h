@@ -34,4 +34,8 @@
 + (BOOL)swizzleClassMethod:(SEL)origSelector with:(SEL)anotherSelector of:(Class)klass;
 + (BOOL)swizzleClassMethod:(SEL)origSelector of:(Class)origKlass with:(SEL)anotherSelector of:(Class)anotherKlass;
 
+#pragma mark - Utils
+
+#define $safe(OBJ) ((NSNull *)(OBJ) == [NSNull null] ? nil : (OBJ))
+
 @end

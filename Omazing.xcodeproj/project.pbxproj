@@ -41,6 +41,7 @@
 		C3E91DF215D95DB50001A8EB /* Localizable.en.strings in Copy "fakebrand" Files */ = {isa = PBXBuildFile; fileRef = C3E91DED15D95B6D0001A8EB /* Localizable.en.strings */; };
 		C3E91DF715D969660001A8EB /* Localizable.en.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3E91DF615D969660001A8EB /* Localizable.en.strings */; };
 		C3E91DF915D96AA40001A8EB /* Localizable.en.strings in Copy Default Brand Files */ = {isa = PBXBuildFile; fileRef = C3E91DF615D969660001A8EB /* Localizable.en.strings */; };
+		C3EACA8D1679E9C800D58429 /* OmazingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EACA8C1679E9C800D58429 /* OmazingTests.m */; };
 		C3FCF70E160E20BF008AB2F0 /* NSThread+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FCF70C160E20BF008AB2F0 /* NSThread+Omazing.h */; };
 		C3FCF70F160E20BF008AB2F0 /* NSThread+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FCF70D160E20BF008AB2F0 /* NSThread+Omazing.m */; };
 		C3FCF715160EBC62008AB2F0 /* NSThread+OmazingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FCF714160EBC62008AB2F0 /* NSThread+OmazingTests.m */; };
@@ -123,6 +124,7 @@
 		C3CBB3A1161F16460040E3E8 /* NSData+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Omazing.m"; sourceTree = "<group>"; };
 		C3E91DED15D95B6D0001A8EB /* Localizable.en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.en.strings; sourceTree = "<group>"; };
 		C3E91DF615D969660001A8EB /* Localizable.en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.en.strings; sourceTree = "<group>"; };
+		C3EACA8C1679E9C800D58429 /* OmazingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OmazingTests.m; sourceTree = "<group>"; };
 		C3FCF70C160E20BF008AB2F0 /* NSThread+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSThread+Omazing.h"; sourceTree = "<group>"; };
 		C3FCF70D160E20BF008AB2F0 /* NSThread+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSThread+Omazing.m"; sourceTree = "<group>"; };
 		C3FCF714160EBC62008AB2F0 /* NSThread+OmazingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSThread+OmazingTests.m"; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				C3E91DEB15D95B6D0001A8EB /* brand */,
+				C3EACA8C1679E9C800D58429 /* OmazingTests.m */,
 				C3438CBB15D3870400434683 /* NSArray+OmazingTests.m */,
 				C3438CBD15D38A6600434683 /* NSString+OmazingTests.m */,
 				C3438CDC15D4050E00434683 /* NSURL+OmazingTests.m */,
@@ -446,6 +449,7 @@
 				C3438CDD15D4050E00434683 /* NSURL+OmazingTests.m in Sources */,
 				C3267D4915D9146000DF1923 /* NSBundle+OmazingTests.m in Sources */,
 				C3FCF715160EBC62008AB2F0 /* NSThread+OmazingTests.m in Sources */,
+				C3EACA8D1679E9C800D58429 /* OmazingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
