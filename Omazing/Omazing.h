@@ -16,6 +16,7 @@
 #import "NSString+Omazing.h"
 #import "NSThread+Omazing.h"
 #import "NSURL+Omazing.h"
+#import "NSTimer+Omazing.h"
 
 @interface Omazing : NSObject
 
