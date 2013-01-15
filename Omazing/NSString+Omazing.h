@@ -23,4 +23,6 @@
 
 - (BOOL)isEmail;
 
+- (BOOL)isSubpathOfPath:(NSString *)path;
+
 @end

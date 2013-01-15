@@ -122,6 +122,22 @@ describe(@"NSString", ^{
             expect([@"test123.test@example.com" isEmail]).to.beTruthy();
         });
     });
+
+    context(@"path operations", ^{
+        it(@"subpath validation", ^{
+            expect([@"/path/to/subpath/a.txt" isSubpathOfPath:@"/path"]).to.beTruthy();
+            expect([@"/path/to/subpath/a.txt" isSubpathOfPath:@"/path//"]).to.beTruthy();
+            expect([@"/path/to/subpath/a.txt" isSubpathOfPath:@"//path"]).to.beTruthy();
+            expect([@"/path/to/subpath/a.txt" isSubpathOfPath:@"/"]).to.beTruthy();
+            expect([@"/path/to/subpath/a.txt" isSubpathOfPath:@"/path//to/"]).to.beTruthy();
+            expect([@"/path/to/subpath/a.txt" isSubpathOfPath:@"/pa"]).to.beFalsy();
+
+            expect([@"/path/to/subpath/a.txt" isSubpathOfPath:@"/path/to/subpath/a.txt"]).to.beTruthy();
+            expect([@"/path/to/subpath/a.txt" isSubpathOfPath:@"/path/to/subpath/a.txt/"]).to.beTruthy();
+            expect([@"/path/to/subpath/a.txt/" isSubpathOfPath:@"/path/to/subpath/a.txt"]).to.beTruthy();
+            expect([@"/path/to/subpath/a.txt/" isSubpathOfPath:@"/path/to/subpath/a.txt/"]).to.beTruthy();
+        });
+    });
 });
 
 SpecEnd

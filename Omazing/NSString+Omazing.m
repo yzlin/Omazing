@@ -95,4 +95,19 @@
     return [emailTest evaluateWithObject:self];
 }
 
+- (BOOL)isSubpathOfPath:(NSString *)path
+{
+    NSParameterAssert(path);
+    NSString *selfPath = [self stringByStandardizingPath];
+    if (![selfPath isEqualToString:@"/"])
+        selfPath = [selfPath stringByAppendingString:@"/"];
+
+    NSString *comparedPath = [path stringByStandardizingPath];
+    if (![comparedPath hasSuffix:@"/"])
+        comparedPath = [comparedPath stringByAppendingString:@"/"];
+
+    NSRange result = [selfPath rangeOfString:comparedPath options:NSAnchoredSearch | NSCaseInsensitiveSearch];
+    return (result.location == 0);
+}
+
 @end
