@@ -48,7 +48,9 @@
 
 - (void)performBlock:(void (^)())block afterDelay:(NSTimeInterval)delay
 {
-    [self performSelector:@selector(performBlock:) withObject:block afterDelay:delay];
+    [self performSelector:@selector(performBlock:)
+               withObject:[[block copy] autorelease]
+               afterDelay:delay];
 }
 
 #endif
