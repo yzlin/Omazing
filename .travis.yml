@@ -1,3 +1,4 @@
 language: objective-c
-install: bundle exec pod install
+before_install: bundle install
+install: bundle exec pod install --trace
 script: bundle exec env VERBOSE=true rake test --trace
