@@ -7,6 +7,7 @@
 //
 
 #import <CommonCrypto/CommonDigest.h>
+#import <libproc.h>
 
 #import "Omazing.h"
 
@@ -168,6 +169,44 @@
         anotherMethod = class_getClassMethod(anotherKlass, anotherSelector);
     method_exchangeImplementations(origMethod, anotherMethod);
     return YES;
+}
+
++ (NSSet *)pidsAccessingPath:(NSString *)path
+{
+    NSParameterAssert(path.length > 0);
+
+    NSMutableSet *result = nil;
+    pid_t *pids = NULL;
+    const char *pathFileSystemRepresentation = [path stringByStandardizingPath].UTF8String;
+
+    int listpidspathResult = proc_listpidspath(PROC_ALL_PIDS, 0,
+                                               pathFileSystemRepresentation, PROC_LISTPIDSPATH_EXCLUDE_EVTONLY, nil, 0);
+
+    if (listpidspathResult < 0) goto cleanup;
+
+    int pidsSize = (listpidspathResult ? listpidspathResult : 1);
+    pids = malloc(pidsSize);
+
+    if(!pids) goto cleanup;
+
+    listpidspathResult = proc_listpidspath(PROC_ALL_PIDS, 0,
+                                           pathFileSystemRepresentation, PROC_LISTPIDSPATH_EXCLUDE_EVTONLY, pids,
+                                           pidsSize);
+
+    if (listpidspathResult < 0) goto cleanup;
+
+    NSUInteger pidsCount = listpidspathResult / sizeof(*pids);
+    result = [NSMutableSet set];
+
+    for (int i = 0; i < pidsCount; i++)
+        [result addObject:@(pids[i])];
+
+cleanup:
+    if (pids)
+        free(pids),
+        pids = NULL;
+
+    return result;
 }
 
 @end
