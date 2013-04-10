@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 github.com/yzlin. All rights reserved.
 //
 
+#import <TargetConditionals.h>
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
@@ -35,7 +36,9 @@
 + (BOOL)swizzleClassMethod:(SEL)origSelector with:(SEL)anotherSelector of:(Class)klass;
 + (BOOL)swizzleClassMethod:(SEL)origSelector of:(Class)origKlass with:(SEL)anotherSelector of:(Class)anotherKlass;
 
+#if !TARGET_OS_IPHONE
 + (NSSet *)pidsAccessingPath:(NSString *)path;
+#endif
 
 #pragma mark - Utils
 

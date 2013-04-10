@@ -7,7 +7,6 @@
 //
 
 #import <CommonCrypto/CommonDigest.h>
-#import <TargetConditionals.h>
 
 #if !TARGET_OS_IPHONE
 #import <libproc.h>
