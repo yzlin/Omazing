@@ -7,7 +7,11 @@
 //
 
 #import <CommonCrypto/CommonDigest.h>
+#import <TargetConditionals.h>
+
+#if !TARGET_OS_IPHONE
 #import <libproc.h>
+#endif
 
 #import "Omazing.h"
 
@@ -171,6 +175,8 @@
     return YES;
 }
 
+#if !TARGET_OS_IPHONE
+
 + (NSSet *)pidsAccessingPath:(NSString *)path
 {
     NSParameterAssert(path.length > 0);
@@ -208,5 +214,7 @@ cleanup:
 
     return result;
 }
+
+#endif
 
 @end
