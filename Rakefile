@@ -19,6 +19,8 @@ task :test do
 
   puts "\n\n\n" if verbose
   puts "Mac: #{ret == 0 ? 'PASSED'.green : 'FAILED'.red}"
+
+  exit ret
 end
 
 def test_scheme(workspace, scheme, verbose=false)
