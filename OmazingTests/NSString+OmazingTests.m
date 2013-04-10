@@ -138,6 +138,14 @@ describe(@"NSString", ^{
             expect([@"/path/to/subpath/a.txt/" isSubpathOfPath:@"/path/to/subpath/a.txt/"]).to.beTruthy();
         });
     });
+
+    context(@"string producing", ^{
+        it(@"should return trimmed strings", ^{
+            expect(@"\n   this is \n \t a sentence.".trimmedString).to.equal(@"this is \n \t a sentence.");
+            expect(@"      this is \t a sentence. \n".trimmedString).to.equal(@"this is \t a sentence.");
+            expect(@"\n   this is \n \t a sentence.   \t".trimmedString).to.equal(@"this is \n \t a sentence.");
+        });
+    });
 });
 
 SpecEnd

@@ -14,7 +14,7 @@
 
 + (BOOL)isNilOrEmpty:(NSString *)str
 {
-    return str == nil || str.length == 0;
+    return (str.length == 0);
 }
 
 + (NSString *)uuid
@@ -108,6 +108,11 @@
 
     NSRange result = [selfPath rangeOfString:comparedPath options:NSAnchoredSearch | NSCaseInsensitiveSearch];
     return (result.location == 0);
+}
+
+- (NSString *)trimmedString
+{
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 @end

@@ -25,4 +25,6 @@
 
 - (BOOL)isSubpathOfPath:(NSString *)path;
 
+- (NSString *)trimmedString;
+
 @end
