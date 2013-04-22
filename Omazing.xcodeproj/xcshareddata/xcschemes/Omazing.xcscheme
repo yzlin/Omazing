@@ -37,26 +37,6 @@
                BlueprintName = "OmazingTests"
                ReferencedContainer = "container:Omazing.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "NSURLSpec">
-               </Test>
-               <Test
-                  Identifier = "NSThreadSpec">
-               </Test>
-               <Test
-                  Identifier = "NSbundleSpec">
-               </Test>
-               <Test
-                  Identifier = "NSArraySpec">
-               </Test>
-               <Test
-                  Identifier = "OmazingSpec">
-               </Test>
-               <Test
-                  Identifier = "NSStringSpec">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>
