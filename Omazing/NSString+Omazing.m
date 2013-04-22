@@ -19,7 +19,7 @@
 
 + (NSString *)uuid
 {
-    return [[NSProcessInfo processInfo] globallyUniqueString];
+    return [NSProcessInfo processInfo].globallyUniqueString;
 }
 
 - (NSArray *)arrayWithMatchedRegex:(NSString *)pattern

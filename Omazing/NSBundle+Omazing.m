@@ -49,7 +49,7 @@ static char brandAssociatedKey;
     //   If no one matched, use System Default
 
     NSFileManager *fileMgr = [NSFileManager defaultManager];
-    NSString *languageID = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSString *languageID = [NSLocale preferredLanguages][0];
     BOOL isDirectory;
 
     NSMutableDictionary *table = [NSMutableDictionary dictionaryWithDictionary:self._localizedInfoDictionary];
@@ -71,7 +71,7 @@ static char brandAssociatedKey;
 
 - (NSString *)_localizedStringForKey:(NSString *)key value:(NSString *)value table:(NSString *)tableName
 {
-    if ([tableName length] == 0)
+    if (tableName.length == 0)
         tableName = @"Localizable";
 
     NSString *localizedString = nil;
@@ -83,21 +83,21 @@ static char brandAssociatedKey;
     //   If no one matched, use System Default
 
     NSFileManager *fileMgr = [NSFileManager defaultManager];
-    NSString *languageID = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSString *languageID = [NSLocale preferredLanguages][0];
     BOOL isDirectory;
 
     if (![NSString isNilOrEmpty:self.brand]) {
         NSString *brandLanguagePath = [[self resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"brand/%@/%@.%@.strings", self.brand, tableName, languageID]];
         if ([fileMgr fileExistsAtPath:brandLanguagePath isDirectory:&isDirectory] && !isDirectory) {
             NSDictionary *table = [NSDictionary dictionaryWithContentsOfFile:brandLanguagePath];
-            localizedString = [table objectForKey:key];
+            localizedString = table[key];
         }
     }
 
     NSString *defaultLanguagePath = [[self resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"brand/_default/%@.%@.strings", tableName, languageID]];
     if (!localizedString && [fileMgr fileExistsAtPath:defaultLanguagePath isDirectory:&isDirectory] && !isDirectory) {
         NSDictionary *table = [NSDictionary dictionaryWithContentsOfFile:defaultLanguagePath];
-        localizedString = [table objectForKey:key];
+        localizedString = table[key];
     }
 
     if (!localizedString)
@@ -106,7 +106,7 @@ static char brandAssociatedKey;
     if (localizedString)
         return localizedString;
     else
-        return [value length] > 0 ? value : key;
+        return value.length > 0 ? value : key;
 }
 
 @end

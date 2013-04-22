@@ -14,7 +14,7 @@ NSString * const kOMZCommonCryptoErrorDomain = @"OMZCommonCryptoErrorDomain";
 
 + (NSError *)errorWithDomain:(NSString *)domain code:(NSInteger)code description:(NSString *)desc
 {
-    NSDictionary *infoDict = [NSDictionary dictionaryWithObjectsAndKeys:desc, NSLocalizedDescriptionKey, nil];
+    NSDictionary *infoDict = @{NSLocalizedDescriptionKey: desc};
 
     return [[[NSError alloc] initWithDomain:domain
                                        code:code
@@ -72,9 +72,9 @@ NSString * const kOMZCommonCryptoErrorDomain = @"OMZCommonCryptoErrorDomain";
     }
 
     NSMutableDictionary *userInfo = [NSMutableDictionary new];
-    [userInfo setObject:description forKey:NSLocalizedDescriptionKey];
+    userInfo[NSLocalizedDescriptionKey] = description;
 
-    if (reason) [userInfo setObject:reason forKey:NSLocalizedFailureReasonErrorKey];
+    if (reason) userInfo[NSLocalizedFailureReasonErrorKey] = reason;
 
     NSError * result = [NSError errorWithDomain:kOMZCommonCryptoErrorDomain
                                            code:status

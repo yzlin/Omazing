@@ -29,8 +29,8 @@
         NSData *data = [handle readDataOfLength:1024];
         if (data.length == 0)
             break;
-        NSNumber *len = [NSNumber numberWithUnsignedInteger:data.length];
-        CC_MD5_Update(&md5, data.bytes, [len unsignedIntValue]);
+        NSNumber *len = @(data.length);
+        CC_MD5_Update(&md5, data.bytes, len.unsignedIntValue);
     }
 
     uint8_t digest[CC_MD5_DIGEST_LENGTH];
@@ -57,8 +57,8 @@
         NSData *data = [handle readDataOfLength:1024];
         if (data.length == 0)
             break;
-        NSNumber *len = [NSNumber numberWithUnsignedInteger:data.length];
-        CC_SHA1_Update(&sha1, data.bytes, [len unsignedIntValue]);
+        NSNumber *len = @(data.length);
+        CC_SHA1_Update(&sha1, data.bytes, len.unsignedIntValue);
     }
 
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
@@ -85,8 +85,8 @@
         NSData *data = [handle readDataOfLength:1024];
         if (data.length == 0)
             break;
-        NSNumber *len = [NSNumber numberWithUnsignedInteger:data.length];
-        CC_SHA256_Update(&sha256, data.bytes, [len unsignedIntValue]);
+        NSNumber *len = @(data.length);
+        CC_SHA256_Update(&sha256, data.bytes, len.unsignedIntValue);
     }
 
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];
@@ -113,8 +113,8 @@
         NSData *data = [handle readDataOfLength:1024];
         if (data.length == 0)
             break;
-        NSNumber *len = [NSNumber numberWithUnsignedInteger:data.length];
-        CC_SHA512_Update(&sha512, data.bytes, [len unsignedIntValue]);
+        NSNumber *len = @(data.length);
+        CC_SHA512_Update(&sha512, data.bytes, len.unsignedIntValue);
     }
 
     uint8_t digest[CC_SHA512_DIGEST_LENGTH];
@@ -192,7 +192,7 @@
     int pidsSize = (listpidspathResult ? listpidspathResult : 1);
     pids = malloc(pidsSize);
 
-    if(!pids) goto cleanup;
+    if (!pids) goto cleanup;
 
     listpidspathResult = proc_listpidspath(PROC_ALL_PIDS, 0,
                                            pathFileSystemRepresentation, PROC_LISTPIDSPATH_EXCLUDE_EVTONLY, pids,
@@ -207,9 +207,10 @@
         [result addObject:@(pids[i])];
 
 cleanup:
-    if (pids)
-        free(pids),
+    if (pids) {
+        free(pids);
         pids = NULL;
+    }
 
     return result;
 }

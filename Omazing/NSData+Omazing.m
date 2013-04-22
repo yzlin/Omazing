@@ -20,8 +20,8 @@
 {
     uint8_t digest[CC_MD5_DIGEST_LENGTH];
 
-    NSNumber *len = [NSNumber numberWithUnsignedInteger:self.length];
-    CC_MD5(self.bytes, [len unsignedIntValue], digest);
+    NSNumber *len = @(self.length);
+    CC_MD5(self.bytes, len.unsignedIntValue, digest);
 
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
 
@@ -36,8 +36,8 @@
 {
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
 
-    NSNumber *len = [NSNumber numberWithUnsignedInteger:self.length];
-    CC_SHA1(self.bytes, [len unsignedIntValue], digest);
+    NSNumber *len = @(self.length);
+    CC_SHA1(self.bytes, len.unsignedIntValue, digest);
 
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
 
@@ -52,8 +52,8 @@
 {
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];
 
-    NSNumber *len = [NSNumber numberWithUnsignedInteger:self.length];
-    CC_SHA256(self.bytes, [len unsignedIntValue], digest);
+    NSNumber *len = @(self.length);
+    CC_SHA256(self.bytes, len.unsignedIntValue, digest);
 
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH * 2];
 
@@ -67,8 +67,8 @@
 - (NSString *)sha512 {
     uint8_t digest[CC_SHA512_DIGEST_LENGTH];
 
-    NSNumber *len = [NSNumber numberWithUnsignedInteger:self.length];
-    CC_SHA512(self.bytes, [len unsignedIntValue], digest);
+    NSNumber *len = @(self.length);
+    CC_SHA512(self.bytes, len.unsignedIntValue, digest);
 
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA512_DIGEST_LENGTH * 2];
 

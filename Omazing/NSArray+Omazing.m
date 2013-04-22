@@ -58,9 +58,9 @@
     id result = nil;
 
     if ([self count] == 1) {
-        result = [[[self objectAtIndex:0] copy] autorelease];
+        result = [[self[0] copy] autorelease];
     } else if ([self count] > 1) {
-        result = block([self objectAtIndex:0], [self objectAtIndex:1]);
+        result = block(self[0], self[1]);
         for (id obj in [self subarrayWithRange:NSMakeRange(2, self.count - 2)]) {
             result = block(result, obj);
         }
@@ -102,12 +102,12 @@
 
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:MIN(self.count, other.count)];
 
-    NSEnumerator *selfEnumerator = [self objectEnumerator];
-    NSEnumerator *otherEnumerator = [other objectEnumerator];
+    NSEnumerator *selfEnumerator = self.objectEnumerator;
+    NSEnumerator *otherEnumerator = other.objectEnumerator;
 
     id objA, objB;
 
-    while ((objA = [selfEnumerator nextObject]) && (objB = [otherEnumerator nextObject])) {
+    while ((objA = selfEnumerator.nextObject) && (objB = otherEnumerator.nextObject)) {
         id value = block(objA, objB);
         [result addObject:(value ? value : [NSNull null])];
     }
@@ -123,11 +123,11 @@
     for (id obj in self) {
         id key = block(obj);
         key = key ? key : [NSNull null];
-        if ([dict objectForKey:key] == nil)
-            [dict setObject:obj forKey:key];
+        if (dict[key] == nil)
+            dict[key] = obj;
     }
 
-    NSArray *result = [dict allValues];
+    NSArray *result = dict.allValues;
     [dict release];
 
     return result;
