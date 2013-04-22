@@ -53,6 +53,9 @@
                <Test
                   Identifier = "OmazingSpec">
                </Test>
+               <Test
+                  Identifier = "NSStringSpec">
+               </Test>
             </SkippedTests>
          </TestableReference>
       </Testables>
