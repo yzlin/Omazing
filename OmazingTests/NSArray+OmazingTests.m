@@ -47,11 +47,10 @@ describe(@"NSArray", ^{
         __block NSArray *array;
 
         beforeAll(^{
-            array = [@[ @0, @1, @2, @3, @4, @5 ] retain];
+            array = @[ @0, @1, @2, @3, @4, @5 ];
         });
 
         afterAll(^{
-            [array release];
             array = nil;
         });
 

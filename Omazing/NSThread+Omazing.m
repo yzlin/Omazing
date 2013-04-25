@@ -27,7 +27,7 @@
 + (void)performBlockInBackground:(void (^)())block
 {
     [NSThread performSelectorInBackground:@selector(runBlock:)
-                               withObject:[[block copy] autorelease]];
+                               withObject:[block copy]];
 }
 
 - (void)performBlock:(void (^)())block
@@ -42,14 +42,14 @@
 {
     [NSThread performSelector:@selector(runBlock:)
                      onThread:self
-                   withObject:[[block copy] autorelease]
+                   withObject:[block copy]
                 waitUntilDone:wait];
 }
 
 - (void)performBlock:(void (^)())block afterDelay:(NSTimeInterval)delay
 {
     [self performSelector:@selector(performBlock:)
-               withObject:[[block copy] autorelease]
+               withObject:[block copy]
                afterDelay:delay];
 }
 

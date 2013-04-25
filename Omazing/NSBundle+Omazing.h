@@ -10,6 +10,6 @@
 
 @interface NSBundle (Omazing)
 
-@property (nonatomic, retain) NSString *brand;
+@property (nonatomic, strong) NSString *brand;
 
 @end

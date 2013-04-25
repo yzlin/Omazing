@@ -48,7 +48,7 @@
         [result addObject:(value ? value : [NSNull null])];
     }
 
-    return [result autorelease];
+    return result;
 }
 
 - (id)reduce:(id (^)(id, id))block
@@ -58,7 +58,7 @@
     id result = nil;
 
     if ([self count] == 1) {
-        result = [[self[0] copy] autorelease];
+        result = [self[0] copy];
     } else if ([self count] > 1) {
         result = block(self[0], self[1]);
         for (id obj in [self subarrayWithRange:NSMakeRange(2, self.count - 2)]) {
@@ -80,7 +80,7 @@
         }
     }
 
-    return [result autorelease];
+    return result;
 }
 
 - (id)firstMatch:(BOOL(^)(id))block
@@ -112,7 +112,7 @@
         [result addObject:(value ? value : [NSNull null])];
     }
 
-    return [result autorelease];
+    return result;
 }
 
 - (NSArray *)uniq:(id (^)(id))block
@@ -128,7 +128,6 @@
     }
 
     NSArray *result = dict.allValues;
-    [dict release];
 
     return result;
 }

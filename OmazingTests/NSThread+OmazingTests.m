@@ -22,11 +22,11 @@
 
 - (void)workerMain:(id)object
 {
-    NSAutoreleasePool *pool = [NSAutoreleasePool new];
-    while (!self.isCancelled) {
-        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+    @autoreleasepool {
+        while (!self.isCancelled) {
+            [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+        }
     }
-    [pool drain];
 }
 
 @end
@@ -50,7 +50,6 @@ describe(@"NSThread", ^{
 
     afterEach(^{
         [workerThread cancel];
-        [workerThread autorelease];
         workerThread = nil;
     });
 

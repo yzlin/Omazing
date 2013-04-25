@@ -16,9 +16,9 @@ NSString * const kOMZCommonCryptoErrorDomain = @"OMZCommonCryptoErrorDomain";
 {
     NSDictionary *infoDict = @{NSLocalizedDescriptionKey: desc};
 
-    return [[[NSError alloc] initWithDomain:domain
+    return [[NSError alloc] initWithDomain:domain
                                        code:code
-                                   userInfo:infoDict] autorelease];
+                                   userInfo:infoDict];
 }
 
 + (NSError *)errorWithPOSIXCode:(int)code
@@ -79,7 +79,6 @@ NSString * const kOMZCommonCryptoErrorDomain = @"OMZCommonCryptoErrorDomain";
     NSError * result = [NSError errorWithDomain:kOMZCommonCryptoErrorDomain
                                            code:status
                                        userInfo:userInfo];
-    [userInfo release];
 
     return result;
 }

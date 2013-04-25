@@ -23,10 +23,6 @@ static char deallocArrayKey;
 - (void)dealloc
 {
     if (_deallocBlock) _deallocBlock();
-
-    [_deallocBlock release];
-
-    [super dealloc];
 }
 
 @end
@@ -35,19 +31,16 @@ static char deallocArrayKey;
 
 - (void)addDeallocBlock:(void (^)())block
 {
-    NSAutoreleasePool *pool = [NSAutoreleasePool new];
-
-    NSMutableArray *deallocBlocks = objc_getAssociatedObject(self, &deallocArrayKey);
-    if (!deallocBlocks) {
-        deallocBlocks = [NSMutableArray array];
-        objc_setAssociatedObject(self, &deallocArrayKey, deallocBlocks, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    @autoreleasepool {
+        NSMutableArray *deallocBlocks = objc_getAssociatedObject(self, &deallocArrayKey);
+        if (!deallocBlocks) {
+            deallocBlocks = [NSMutableArray array];
+            objc_setAssociatedObject(self, &deallocArrayKey, deallocBlocks, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
+        OMZDeallocHandler *handler = [OMZDeallocHandler new];
+        handler.deallocBlock = block;
+        [deallocBlocks addObject:handler];
     }
-    OMZDeallocHandler *handler = [OMZDeallocHandler new];
-    handler.deallocBlock = block;
-    [deallocBlocks addObject:handler];
-    [handler release];
-
-    [pool release];
 }
 
 @end

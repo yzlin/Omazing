@@ -26,7 +26,6 @@
                                         selector:@selector(executeBlockForTimer:)
                                         userInfo:blk
                                          repeats:yesOrNo];
-    [blk release];
 
     return timer;
 }
@@ -39,7 +38,6 @@
                                                  selector:@selector(executeBlockForTimer:)
                                                  userInfo:blk
                                                   repeats:yesOrNo];
-    [blk release];
 
     return timer;
 }

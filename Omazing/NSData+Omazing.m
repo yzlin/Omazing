@@ -196,9 +196,6 @@ static void FixKeyLengths(CCAlgorithm algorithm, NSMutableData *keyData, NSMutab
                              keyData.bytes, keyData.length, ivData.bytes,
                              &cryptor);
 
-    [keyData release];
-    [ivData release];
-
     if (status != kCCSuccess) {
         if (error) *error = status;
         return nil;
@@ -253,9 +250,6 @@ static void FixKeyLengths(CCAlgorithm algorithm, NSMutableData *keyData, NSMutab
     status = CCCryptorCreate(kCCDecrypt, algorithm, options,
                              keyData.bytes, keyData.length, ivData.bytes,
                              &cryptor);
-
-    [keyData release];
-    [ivData release];
 
     if (status != kCCSuccess) {
         if (error) *error = status;

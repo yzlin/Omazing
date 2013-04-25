@@ -40,7 +40,7 @@
         [results addObject:matchedStr];
     }
 
-    return [results autorelease];
+    return results;
 }
 
 - (BOOL)isMatchRegex:(NSString *)pattern
