@@ -24,6 +24,6 @@
 
 @interface NSObject (Omazing)
 
-- (void)addDeallocBlock:(void (^)())block;
+- (void)addDeallocBlock:(void (^)(void))block;
 
 @end

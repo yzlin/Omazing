@@ -29,7 +29,7 @@ static char deallocArrayKey;
 
 @implementation NSObject (Omazing)
 
-- (void)addDeallocBlock:(void (^)())block
+- (void)addDeallocBlock:(void (^)(void))block
 {
     @autoreleasepool {
         NSMutableArray *deallocBlocks = objc_getAssociatedObject(self, &deallocArrayKey);

@@ -28,7 +28,7 @@ NSString * const kOMZCommonCryptoErrorDomain = @"OMZCommonCryptoErrorDomain";
 
 + (NSError *)errorWithDomain:(NSString *)domain code:(NSInteger)code description:(NSString *)desc
 {
-    NSDictionary *infoDict = @{NSLocalizedDescriptionKey: desc};
+    NSDictionary *infoDict = @{ NSLocalizedDescriptionKey: desc };
 
     return [[NSError alloc] initWithDomain:domain
                                        code:code
