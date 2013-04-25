@@ -32,26 +32,26 @@
     }
 }
 
-+ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti block:(void (^)())block repeats:(BOOL)yesOrNo
++ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti block:(void (^)())block repeat:(BOOL)repeat
 {
     void (^blk)() = [block copy];
     NSTimer *timer = [self timerWithTimeInterval:ti
                                           target:self
                                         selector:@selector(executeBlockForTimer:)
                                         userInfo:blk
-                                         repeats:yesOrNo];
+                                         repeats:repeat];
 
     return timer;
 }
 
-+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti block:(void (^)())block repeats:(BOOL)yesOrNo
++ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti block:(void (^)())block repeat:(BOOL)repeat
 {
     void (^blk)() = [block copy];
     NSTimer *timer = [self scheduledTimerWithTimeInterval:ti
                                                    target:self
                                                  selector:@selector(executeBlockForTimer:)
                                                  userInfo:blk
-                                                  repeats:yesOrNo];
+                                                  repeats:repeat];
 
     return timer;
 }
