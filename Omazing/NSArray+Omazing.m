@@ -30,37 +30,59 @@
 {
     OMZ_NIL_BLOCK_CHECK(block);
 
-    for (id obj in self) {
-        if (block(obj)) {
-            return YES;
-        }
-    }
-
-    return NO;
+    return [self firstMatch:block] != nil;
 }
 
 - (BOOL)all:(BOOL (^)(id))block
 {
     OMZ_NIL_BLOCK_CHECK(block);
 
-    for (id obj in self) {
-        if (!block(obj)) {
-            return NO;
-        }
-    }
+    __block BOOL result = YES;
 
-    return YES;
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (!block(obj)) {
+            result = NO;
+            *stop = YES;
+        }
+    }];
+
+    return result;
+}
+
+- (BOOL)none:(BOOL (^)(id))block
+{
+    OMZ_NIL_BLOCK_CHECK(block);
+
+    return [self firstMatch:block] == nil;
+}
+
+- (void)each:(void (^)(id))block
+{
+    OMZ_NIL_BLOCK_CHECK(block);
+
+    [self each_i:^(id obj, NSUInteger idx) {
+        block(obj);
+    }];
+}
+
+- (void)each_i:(void (^)(id, NSUInteger))block
+{
+    OMZ_NIL_BLOCK_CHECK(block);
+
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        block(obj, idx);
+    }];
 }
 
 - (NSArray *)map:(id (^)(id))block
 {
     OMZ_NIL_BLOCK_CHECK(block);
 
-    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:self.count];
-    for (id obj in self) {
+    __block NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         id value = block(obj);
         [result addObject:(value ? value : [NSNull null])];
-    }
+    }];
 
     return result;
 }
@@ -69,16 +91,11 @@
 {
     OMZ_NIL_BLOCK_CHECK(block);
 
-    id result = nil;
+    __block id result = nil;
 
-    if ([self count] == 1) {
-        result = [self[0] copy];
-    } else if ([self count] > 1) {
-        result = block(self[0], self[1]);
-        for (id obj in [self subarrayWithRange:NSMakeRange(2, self.count - 2)]) {
-            result = block(result, obj);
-        }
-    }
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        result = result ? block(result, obj) : obj;
+    }];
 
     return result;
 }
@@ -87,12 +104,10 @@
 {
     OMZ_NIL_BLOCK_CHECK(block);
 
-    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:self.count];
-    for (id obj in self) {
-        if (block(obj)) {
-            [result addObject:obj];
-        }
-    }
+    __block NSMutableArray *result = [NSMutableArray array];
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (block(obj)) [result addObject:obj];
+    }];
 
     return result;
 }
@@ -101,13 +116,16 @@
 {
     OMZ_NIL_BLOCK_CHECK(block);
 
-    for (id obj in self) {
-        if (block(obj)) {
-            return obj;
-        }
-    }
+    __block id result = nil;
 
-    return nil;
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (block(obj)) {
+            result = obj;
+            *stop = YES;
+        }
+    }];
+
+    return result;
 }
 
 - (NSArray *)zip:(NSArray *)other with:(id (^)(id, id))block
@@ -133,7 +151,7 @@
 {
     OMZ_NIL_BLOCK_CHECK(block);
 
-    NSMutableDictionary *dict = [NSMutableDictionary new];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     for (id obj in self) {
         id key = block(obj);
         key = key ? key : [NSNull null];

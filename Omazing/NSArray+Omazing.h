@@ -26,6 +26,9 @@
 
 - (BOOL)any:(BOOL (^)(id))block;
 - (BOOL)all:(BOOL (^)(id))block;
+- (BOOL)none:(BOOL (^)(id))block;
+- (void)each:(void (^)(id))block;
+- (void)each_i:(void (^)(id, NSUInteger))block;
 - (NSArray *)map:(id (^)(id))block;
 - (id)reduce:(id (^)(id, id))block;
 - (NSArray *)filter:(BOOL (^)(id))block;
