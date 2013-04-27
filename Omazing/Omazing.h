@@ -30,6 +30,7 @@
 #import "NSDictionary+Omazing.h"
 #import "NSError+Omazing.h"
 #import "NSObject+Omazing.h"
+#import "NSSet+Omazing.h"
 #import "NSString+Omazing.h"
 #import "NSThread+Omazing.h"
 #import "NSURL+Omazing.h"
