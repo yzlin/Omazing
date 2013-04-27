@@ -27,6 +27,7 @@
 #import "NSArray+Omazing.h"
 #import "NSBundle+Omazing.h"
 #import "NSData+Omazing.h"
+#import "NSDictionary+Omazing.h"
 #import "NSError+Omazing.h"
 #import "NSObject+Omazing.h"
 #import "NSString+Omazing.h"

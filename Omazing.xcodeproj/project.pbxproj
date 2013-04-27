@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0D7DEEAED721410F9B6D80F2 /* libPods-OmazingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A81F9D05135643EFA40C785A /* libPods-OmazingTests.a */; };
 		C307505A172587B6009A6DF4 /* NSObject+OmazingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3075059172587B6009A6DF4 /* NSObject+OmazingTests.m */; };
+		C3124918172A8D2000B8D735 /* NSDictionary+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C3124916172A8D2000B8D735 /* NSDictionary+Omazing.h */; };
+		C3124919172A8D2000B8D735 /* NSDictionary+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C3124917172A8D2000B8D735 /* NSDictionary+Omazing.m */; };
+		C312491C172AC98600B8D735 /* NSDictionary+OmazingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C312491B172AC98600B8D735 /* NSDictionary+OmazingTests.m */; };
 		C3267D3315D90FFD00DF1923 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3267D3115D90FFD00DF1923 /* Localizable.strings */; };
 		C3267D4915D9146000DF1923 /* NSBundle+OmazingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3267D4815D9146000DF1923 /* NSBundle+OmazingTests.m */; };
 		C33C8C59172985DE001F862D /* NSTimer+OmazingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C33C8C58172985DE001F862D /* NSTimer+OmazingTests.m */; };
@@ -94,6 +97,9 @@
 		7BF8A5090E1248EDAF494D63 /* Pods-OmazingTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmazingTests.xcconfig"; path = "Pods/Pods-OmazingTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		A81F9D05135643EFA40C785A /* libPods-OmazingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OmazingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3075059172587B6009A6DF4 /* NSObject+OmazingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+OmazingTests.m"; sourceTree = "<group>"; };
+		C3124916172A8D2000B8D735 /* NSDictionary+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Omazing.h"; sourceTree = "<group>"; };
+		C3124917172A8D2000B8D735 /* NSDictionary+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Omazing.m"; sourceTree = "<group>"; };
+		C312491B172AC98600B8D735 /* NSDictionary+OmazingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+OmazingTests.m"; sourceTree = "<group>"; };
 		C3267D3215D90FFD00DF1923 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C3267D4815D9146000DF1923 /* NSBundle+OmazingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+OmazingTests.m"; sourceTree = "<group>"; };
 		C33C8C58172985DE001F862D /* NSTimer+OmazingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+OmazingTests.m"; sourceTree = "<group>"; };
@@ -211,6 +217,8 @@
 			children = (
 				C38C2AEA1537416C00424A0D /* NSArray+Omazing.h */,
 				C38C2AEB1537416C00424A0D /* NSArray+Omazing.m */,
+				C3124916172A8D2000B8D735 /* NSDictionary+Omazing.h */,
+				C3124917172A8D2000B8D735 /* NSDictionary+Omazing.m */,
 				C3CBB3A0161F16460040E3E8 /* NSData+Omazing.h */,
 				C3CBB3A1161F16460040E3E8 /* NSData+Omazing.m */,
 				C38BEDC4154BCC1A00076443 /* NSError+Omazing.h */,
@@ -252,6 +260,7 @@
 				C3E91DEB15D95B6D0001A8EB /* brand */,
 				C3EACA8C1679E9C800D58429 /* OmazingTests.m */,
 				C3438CBB15D3870400434683 /* NSArray+OmazingTests.m */,
+				C312491B172AC98600B8D735 /* NSDictionary+OmazingTests.m */,
 				C3438CBD15D38A6600434683 /* NSString+OmazingTests.m */,
 				C3438CDC15D4050E00434683 /* NSURL+OmazingTests.m */,
 				C3267D4815D9146000DF1923 /* NSBundle+OmazingTests.m */,
@@ -317,6 +326,7 @@
 				C3CBB3A2161F16460040E3E8 /* NSData+Omazing.h in Headers */,
 				C39002D4169C6F9E001BD233 /* NSTimer+Omazing.h in Headers */,
 				C3A84985172579FA00BEAA5B /* NSObject+Omazing.h in Headers */,
+				C3124918172A8D2000B8D735 /* NSDictionary+Omazing.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +469,7 @@
 				C3CBB3A3161F16460040E3E8 /* NSData+Omazing.m in Sources */,
 				C39002D5169C6F9E001BD233 /* NSTimer+Omazing.m in Sources */,
 				C3A84986172579FA00BEAA5B /* NSObject+Omazing.m in Sources */,
+				C3124919172A8D2000B8D735 /* NSDictionary+Omazing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +485,7 @@
 				C3EACA8D1679E9C800D58429 /* OmazingTests.m in Sources */,
 				C307505A172587B6009A6DF4 /* NSObject+OmazingTests.m in Sources */,
 				C33C8C59172985DE001F862D /* NSTimer+OmazingTests.m in Sources */,
+				C312491C172AC98600B8D735 /* NSDictionary+OmazingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
