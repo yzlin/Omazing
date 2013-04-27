@@ -33,37 +33,37 @@ describe(@"NSArray", ^{
     it(@"should throw exception when block is nil", ^{
         expect(^{
             [@[] any:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@[] all:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@[] none:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@[] each:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@[] each_i:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@[] map:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@[] reduce:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@[] filter:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@[] firstMatch:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@[] zip:@[] with:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@[] uniq:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
     });
 
     it(@"-any:", ^{

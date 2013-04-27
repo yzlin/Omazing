@@ -20,22 +20,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "OMZUtils.h"
-
 #import "NSDictionary+Omazing.h"
 
 @implementation NSDictionary (Omazing)
 
 - (BOOL)any:(BOOL (^)(id, id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     return [self firstMatch:block] != nil;
 }
 
 - (BOOL)all:(BOOL (^)(id, id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     __block BOOL result = YES;
 
@@ -51,14 +49,14 @@
 
 - (BOOL)none:(BOOL (^)(id, id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     return [self firstMatch:block] == nil;
 }
 
 - (void)each:(void (^)(id, id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         block(key, obj);
@@ -67,7 +65,7 @@
 
 - (NSDictionary *)map:(id (^)(id, id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     __block NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:self.count];
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -80,7 +78,7 @@
 
 - (NSDictionary *)filter:(BOOL (^)(id, id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     __block NSMutableDictionary *result = [NSMutableDictionary dictionary];
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -92,7 +90,7 @@
 
 - (id)firstMatch:(BOOL (^)(id, id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     __block id result = nil;
 

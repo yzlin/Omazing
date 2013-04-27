@@ -33,26 +33,26 @@ describe(@"NSDictionary", ^{
     it(@"should throw exception when block is nil", ^{
         expect(^{
             [@{} any:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@{} all:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@{} none:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@{} each:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@{} map:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@{} filter:nil];
-        }).to.raise(@"NSInvalidArgumentException");
+        }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
             [@{} firstMatch:nil];
-        }).to.raise(@"NSInvalidArgumentException");
-    });
+        }).to.raise(@"NSInternalInconsistencyException");
+});
 
     it(@"-any:", ^{
         NSDictionary *dict = @{ @0: @"zero", @1: @"one", @2: @"two", @3: @"three", @4: @"four", @5: @"five" };

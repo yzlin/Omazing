@@ -20,22 +20,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "OMZUtils.h"
-
 #import "NSArray+Omazing.h"
 
 @implementation NSArray (Omazing)
 
 - (BOOL)any:(BOOL (^)(id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     return [self firstMatch:block] != nil;
 }
 
 - (BOOL)all:(BOOL (^)(id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     __block BOOL result = YES;
 
@@ -51,14 +49,14 @@
 
 - (BOOL)none:(BOOL (^)(id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     return [self firstMatch:block] == nil;
 }
 
 - (void)each:(void (^)(id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     [self each_i:^(id obj, NSUInteger idx) {
         block(obj);
@@ -67,7 +65,7 @@
 
 - (void)each_i:(void (^)(id, NSUInteger))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         block(obj, idx);
@@ -76,7 +74,7 @@
 
 - (NSArray *)map:(id (^)(id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     __block NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -89,7 +87,7 @@
 
 - (id)reduce:(id (^)(id, id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     __block id result = nil;
 
@@ -102,7 +100,7 @@
 
 - (NSArray *)filter:(BOOL (^)(id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     __block NSMutableArray *result = [NSMutableArray array];
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -114,7 +112,7 @@
 
 - (id)firstMatch:(BOOL(^)(id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     __block id result = nil;
 
@@ -130,7 +128,7 @@
 
 - (NSArray *)zip:(NSArray *)other with:(id (^)(id, id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:MIN(self.count, other.count)];
 
@@ -149,7 +147,7 @@
 
 - (NSArray *)uniq:(id (^)(id))block
 {
-    OMZ_NIL_BLOCK_CHECK(block);
+    NSParameterAssert(block != nil);
 
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     for (id obj in self) {
