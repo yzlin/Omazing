@@ -73,7 +73,7 @@ static char brandAssociatedKey;
         [table addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:defaultLanguagePath]];
     }
 
-    if (![NSString isNilOrEmpty:self.brand]) {
+    if (self.brand.length > 0) {
         NSString *brandLanguagePath = [self.resourcePath stringByAppendingPathComponent:[NSString stringWithFormat:@"brand/%@/InfoPlist.%@.strings", self.brand, languageID]];
         if ([fileMgr fileExistsAtPath:brandLanguagePath isDirectory:&isDirectory] && !isDirectory) {
             [table addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:brandLanguagePath]];
@@ -100,7 +100,7 @@ static char brandAssociatedKey;
     NSString *languageID = [NSLocale preferredLanguages][0];
     BOOL isDirectory;
 
-    if (![NSString isNilOrEmpty:self.brand]) {
+    if (self.brand.length > 0) {
         NSString *brandLanguagePath = [[self resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"brand/%@/%@.%@.strings", self.brand, tableName, languageID]];
         if ([fileMgr fileExistsAtPath:brandLanguagePath isDirectory:&isDirectory] && !isDirectory) {
             NSDictionary *table = [NSDictionary dictionaryWithContentsOfFile:brandLanguagePath];

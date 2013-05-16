@@ -24,7 +24,6 @@
 
 @interface NSString (Omazing)
 
-+ (BOOL)isNilOrEmpty:(NSString *)str;
 + (NSString *)uuid;
 
 - (NSArray *)arrayWithMatchedRegex:(NSString *)pattern;

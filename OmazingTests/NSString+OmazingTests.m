@@ -29,20 +29,8 @@
 SpecBegin(NSString)
 
 describe(@"NSString", ^{
-    context(@"when string is nil or empty", ^{
-        it(@"should return true while checking null or empty strings", ^{
-            expect([NSString isNilOrEmpty:nil]).to.beTruthy();
-            expect([NSString isNilOrEmpty:@""]).to.beTruthy();
-        });
-    });
-
     context(@"when string is 'The quick brown fox jumps over the lazy dog.'", ^{
         NSString * const str = @"The quick brown fox jumps over the lazy dog.";
-
-        it(@"should return false while checking it's empty or null", ^{
-            expect([NSString isNilOrEmpty:str]).to.beFalsy();
-            expect([NSString isNilOrEmpty:str]).to.beFalsy();
-        });
 
         it(@"should have MD5 value of e4d909c290d0fb1ca068ffaddf22cbd0", ^{
             expect([str md5]).to.equal(@"e4d909c290d0fb1ca068ffaddf22cbd0");
@@ -64,11 +52,6 @@ describe(@"NSString", ^{
     context(@"when string is \"中文字嘛A通\"", ^{
         NSString * const str = @"中文字嘛A通";
 
-        it(@"should return false while checking it's empty or null", ^{
-            expect([NSString isNilOrEmpty:str]).to.beFalsy();
-            expect([NSString isNilOrEmpty:str]).to.beFalsy();
-        });
-
         it(@"should have MD5 value of 83d05576facbb56237c04636b437a5fc", ^{
             expect([str md5]).to.equal(@"83d05576facbb56237c04636b437a5fc");
         });
@@ -88,11 +71,6 @@ describe(@"NSString", ^{
 
     context(@"when string is an URL http://www.example.com", ^{
         NSString * const str = @"http://www.example.com";
-
-        it(@"should return false while checking it's empty or null", ^{
-            expect([NSString isNilOrEmpty:str]).to.beFalsy();
-            expect([NSString isNilOrEmpty:str]).to.beFalsy();
-        });
 
         it(@"should have only one matched string with regex /https?/", ^{
             expect([str arrayWithMatchedRegex:@"https?"]).to.equal(@[ @"http" ]);

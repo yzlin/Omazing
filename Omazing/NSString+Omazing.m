@@ -26,11 +26,6 @@
 
 @implementation NSString (Omazing)
 
-+ (BOOL)isNilOrEmpty:(NSString *)str
-{
-    return (str.length == 0);
-}
-
 + (NSString *)uuid
 {
     return [NSProcessInfo processInfo].globallyUniqueString;
