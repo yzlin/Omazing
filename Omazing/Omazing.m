@@ -198,8 +198,12 @@
     pid_t *pids = NULL;
     const char *pathFileSystemRepresentation = [path stringByStandardizingPath].UTF8String;
 
-    int listpidspathResult = proc_listpidspath(PROC_ALL_PIDS, 0,
-                                               pathFileSystemRepresentation, PROC_LISTPIDSPATH_EXCLUDE_EVTONLY, nil, 0);
+    int listpidspathResult = proc_listpidspath(PROC_ALL_PIDS,
+                                               0,
+                                               pathFileSystemRepresentation,
+                                               PROC_LISTPIDSPATH_EXCLUDE_EVTONLY,
+                                               NULL,
+                                               0);
 
     if (listpidspathResult < 0) goto cleanup;
 
@@ -208,8 +212,11 @@
 
     if (!pids) goto cleanup;
 
-    listpidspathResult = proc_listpidspath(PROC_ALL_PIDS, 0,
-                                           pathFileSystemRepresentation, PROC_LISTPIDSPATH_EXCLUDE_EVTONLY, pids,
+    listpidspathResult = proc_listpidspath(PROC_ALL_PIDS,
+                                           0,
+                                           pathFileSystemRepresentation,
+                                           PROC_LISTPIDSPATH_EXCLUDE_EVTONLY,
+                                           pids,
                                            pidsSize);
 
     if (listpidspathResult < 0) goto cleanup;
