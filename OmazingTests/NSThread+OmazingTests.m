@@ -72,7 +72,7 @@ describe(@"NSThread", ^{
     });
 
     it(@"should perform block on worker thread", ^{
-        [workerThread performBlock:^{
+        [workerThread omz_performBlock:^{
             isBlockPerformed = YES;
         }];
 
@@ -80,7 +80,7 @@ describe(@"NSThread", ^{
     });
 
     it(@"should perform block on worker thread and wait until done", ^{
-        [workerThread performBlock:^{
+        [workerThread omz_performBlock:^{
             isBlockPerformed = YES;
         } waitUntilDone:YES];
 
@@ -88,7 +88,7 @@ describe(@"NSThread", ^{
     });
 
     it(@"should perform block on worker thread after 2-sec delay", ^{
-        [workerThread performBlock:^{
+        [workerThread omz_performBlock:^{
             isBlockPerformed = YES;
         } afterDelay:2.0];
 
@@ -96,7 +96,7 @@ describe(@"NSThread", ^{
     });
 
     it(@"should perform block in background", ^{
-        [NSThread performBlockInBackground:^{
+        [NSThread omz_performBlockInBackground:^{
             isBlockPerformed = YES;
         }];
 

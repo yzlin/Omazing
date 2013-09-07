@@ -26,12 +26,12 @@
 
 #if NS_BLOCKS_AVAILABLE
 
-+ (void)performBlockOnMainThread:(void (^)())block;
-+ (void)performBlockInBackground:(void (^)())block;
++ (void)omz_performBlockOnMainThread:(void (^)())block;
++ (void)omz_performBlockInBackground:(void (^)())block;
 
-- (void)performBlock:(void (^)())block;
-- (void)performBlock:(void (^)())block waitUntilDone:(BOOL)wait;
-- (void)performBlock:(void (^)())block afterDelay:(NSTimeInterval)delay;
+- (void)omz_performBlock:(void (^)())block;
+- (void)omz_performBlock:(void (^)())block waitUntilDone:(BOOL)wait;
+- (void)omz_performBlock:(void (^)())block afterDelay:(NSTimeInterval)delay;
 
 #endif
 

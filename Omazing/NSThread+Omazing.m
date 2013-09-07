@@ -29,41 +29,41 @@
 
 #if NS_BLOCKS_AVAILABLE
 
-+ (void)runBlock:(void (^)())block
++ (void)omz_runBlock:(void (^)())block
 {
     block();
 }
 
-+ (void)performBlockOnMainThread:(void (^)())block
++ (void)omz_performBlockOnMainThread:(void (^)())block
 {
-    [[NSThread mainThread] performBlock:block];
+    [[NSThread mainThread] omz_performBlock:block];
 }
 
-+ (void)performBlockInBackground:(void (^)())block
++ (void)omz_performBlockInBackground:(void (^)())block
 {
-    [NSThread performSelectorInBackground:@selector(runBlock:)
+    [NSThread performSelectorInBackground:@selector(omz_runBlock:)
                                withObject:[block copy]];
 }
 
-- (void)performBlock:(void (^)())block
+- (void)omz_performBlock:(void (^)())block
 {
     if ([[NSThread currentThread] isEqual:self])
         block();
     else
-        [self performBlock:block waitUntilDone:NO];
+        [self omz_performBlock:block waitUntilDone:NO];
 }
 
-- (void)performBlock:(void (^)())block waitUntilDone:(BOOL)wait
+- (void)omz_performBlock:(void (^)())block waitUntilDone:(BOOL)wait
 {
-    [NSThread performSelector:@selector(runBlock:)
+    [NSThread performSelector:@selector(omz_runBlock:)
                      onThread:self
                    withObject:[block copy]
                 waitUntilDone:wait];
 }
 
-- (void)performBlock:(void (^)())block afterDelay:(NSTimeInterval)delay
+- (void)omz_performBlock:(void (^)())block afterDelay:(NSTimeInterval)delay
 {
-    [self performSelector:@selector(performBlock:)
+    [self performSelector:@selector(omz_performBlock:)
                withObject:[block copy]
                afterDelay:delay];
 }

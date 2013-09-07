@@ -24,9 +24,9 @@
 
 @interface NSTimer (Omazing)
 
-+ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti block:(void (^)())block repeat:(BOOL)repeat;
++ (NSTimer *)omz_timerWithTimeInterval:(NSTimeInterval)ti block:(void (^)())block repeat:(BOOL)repeat;
 
-+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti block:(void (^)())block repeat:(BOOL)repeat;
++ (NSTimer *)omz_scheduledTimerWithTimeInterval:(NSTimeInterval)ti block:(void (^)())block repeat:(BOOL)repeat;
 
 
 @end

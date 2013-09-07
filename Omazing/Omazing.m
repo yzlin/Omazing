@@ -30,7 +30,7 @@
 
 @implementation Omazing
 
-+ (NSString *)md5FromFile:(NSString *)filePath
++ (NSString *)omz_md5FromFile:(NSString *)filePath
 {
     NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:filePath];
     if (!handle)
@@ -58,7 +58,7 @@
     return output;
 }
 
-+ (NSString *)sha1FromFile:(NSString *)filePath
++ (NSString *)omz_sha1FromFile:(NSString *)filePath
 {
     NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:filePath];
     if (!handle)
@@ -86,7 +86,7 @@
     return output;
 }
 
-+ (NSString *)sha256FromFile:(NSString *)filePath
++ (NSString *)omz_sha256FromFile:(NSString *)filePath
 {
     NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:filePath];
     if (!handle)
@@ -114,7 +114,7 @@
     return output;
 }
 
-+ (NSString *)sha512FromFile:(NSString *)filePath
++ (NSString *)omz_sha512FromFile:(NSString *)filePath
 {
     NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:filePath];
     if (!handle)
@@ -144,12 +144,12 @@
 
 #pragma mark Method Swizzling
 
-+ (BOOL)swizzleMethod:(SEL)origSelector with:(SEL)anotherSelector of:(Class)klass
++ (BOOL)omz_swizzleMethod:(SEL)origSelector with:(SEL)anotherSelector of:(Class)klass
 {
-    return [self swizzleMethod:origSelector of:klass with:anotherSelector of:klass];
+    return [self omz_swizzleMethod:origSelector of:klass with:anotherSelector of:klass];
 }
 
-+ (BOOL)swizzleMethod:(SEL)origSelector of:(Class)origKlass with:(SEL)anotherSelector of:(Class)anotherKlass
++ (BOOL)omz_swizzleMethod:(SEL)origSelector of:(Class)origKlass with:(SEL)anotherSelector of:(Class)anotherKlass
 {
     Method origMethod = class_getInstanceMethod(origKlass, origSelector);
     Method anotherMethod = class_getInstanceMethod(anotherKlass, anotherSelector);
@@ -165,12 +165,12 @@
     return YES;
 }
 
-+ (BOOL)swizzleClassMethod:(SEL)origSelector with:(SEL)anotherSelector of:(Class)klass
++ (BOOL)omz_swizzleClassMethod:(SEL)origSelector with:(SEL)anotherSelector of:(Class)klass
 {
-    return [self swizzleClassMethod:origSelector of:klass with:anotherSelector of:klass];
+    return [self omz_swizzleClassMethod:origSelector of:klass with:anotherSelector of:klass];
 }
 
-+ (BOOL)swizzleClassMethod:(SEL)origSelector of:(Class)origKlass with:(SEL)anotherSelector of:(Class)anotherKlass
++ (BOOL)omz_swizzleClassMethod:(SEL)origSelector of:(Class)origKlass with:(SEL)anotherSelector of:(Class)anotherKlass
 {
     Method origMethod = class_getClassMethod(origKlass, origSelector);
     Method anotherMethod = class_getClassMethod(anotherKlass, anotherSelector);
@@ -190,7 +190,7 @@
 
 #if !TARGET_OS_IPHONE
 
-+ (NSSet *)pidsAccessingPath:(NSString *)path
++ (NSSet *)omz_pidsAccessingPath:(NSString *)path
 {
     NSParameterAssert(path.length > 0);
 

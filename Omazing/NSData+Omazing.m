@@ -28,9 +28,22 @@
 
 @implementation NSData (Omazing)
 
+- (NSString *)omz_hex
+{
+    NSMutableString *output = [NSMutableString stringWithCapacity:self.length * 2];
+
+    for (int i = 0; i < self.length; i++) {
+        uint8_t byte;
+        [self getBytes:&byte range:NSMakeRange(i, 1)];
+        [output appendFormat:@"%02x", byte];
+    }
+
+    return output;
+}
+
 #pragma mark - Hash
 
-- (NSString *)md5
+- (NSString *)omz_md5
 {
     uint8_t digest[CC_MD5_DIGEST_LENGTH];
 
@@ -46,7 +59,7 @@
     return output;
 }
 
-- (NSString *)sha1
+- (NSString *)omz_sha1
 {
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
 
@@ -62,7 +75,7 @@
     return output;
 }
 
-- (NSString *)sha256
+- (NSString *)omz_sha256
 {
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];
 
@@ -78,7 +91,7 @@
     return output;
 }
 
-- (NSString *)sha512 {
+- (NSString *)omz_sha512 {
     uint8_t digest[CC_SHA512_DIGEST_LENGTH];
 
     NSNumber *len = @(self.length);
@@ -95,8 +108,7 @@
 
 #pragma mark - Symmetric Encryption
 
-
-static void FixKeyLengths(CCAlgorithm algorithm, NSMutableData *keyData, NSMutableData *ivData)
+static void OMZFixKeyLengths(CCAlgorithm algorithm, NSMutableData *keyData, NSMutableData *ivData)
 {
     NSUInteger keyLength = keyData.length;
     switch (algorithm) {
@@ -140,7 +152,7 @@ static void FixKeyLengths(CCAlgorithm algorithm, NSMutableData *keyData, NSMutab
     ivData.length = keyData.length;
 }
 
-- (NSData *)_runCryptor:(CCCryptorRef)cryptor result:(CCCryptorStatus *)status
+- (NSData *)__runCryptor:(CCCryptorRef)cryptor result:(CCCryptorStatus *)status
 {
     size_t bufsize = CCCryptorGetOutputLength(cryptor, (size_t)self.length, true);
     void * buf = malloc(bufsize);
@@ -168,34 +180,34 @@ static void FixKeyLengths(CCAlgorithm algorithm, NSMutableData *keyData, NSMutab
     return [NSData dataWithBytesNoCopy:buf length:bytesTotal];
 }
 
-- (NSData *)dataEncryptedUsingAlgorithm:(CCAlgorithm)algorithm
-                                    key:(NSData *)key
-                                  error:(CCCryptorStatus *)error
+- (NSData *)omz_dataEncryptedUsingAlgorithm:(CCAlgorithm)algorithm
+                                        key:(NSData *)key
+                                      error:(CCCryptorStatus *)error
 {
-    return [self dataEncryptedUsingAlgorithm:algorithm
-                                         key:key
-                                          iv:nil
-                                     options:0
-                                       error:error];
+    return [self omz_dataEncryptedUsingAlgorithm:algorithm
+                                             key:key
+                                              iv:nil
+                                         options:0
+                                           error:error];
 }
 
-- (NSData *)dataEncryptedUsingAlgorithm:(CCAlgorithm)algorithm
-                                    key:(NSData *)key
-                                options:(CCOptions)options
-                                  error:(CCCryptorStatus *)error
+- (NSData *)omz_dataEncryptedUsingAlgorithm:(CCAlgorithm)algorithm
+                                        key:(NSData *)key
+                                    options:(CCOptions)options
+                                      error:(CCCryptorStatus *)error
 {
-    return [self dataEncryptedUsingAlgorithm:algorithm
-                                         key:key
-                                          iv:nil
-                                     options:options
-                                       error:error];
+    return [self omz_dataEncryptedUsingAlgorithm:algorithm
+                                             key:key
+                                              iv:nil
+                                         options:options
+                                           error:error];
 }
 
-- (NSData *)dataEncryptedUsingAlgorithm:(CCAlgorithm)algorithm
-                                    key:(NSData *)key
-                                     iv:(NSData *)iv
-                                options:(CCOptions)options
-                                  error:(CCCryptorStatus *)error
+- (NSData *)omz_dataEncryptedUsingAlgorithm:(CCAlgorithm)algorithm
+                                        key:(NSData *)key
+                                         iv:(NSData *)iv
+                                    options:(CCOptions)options
+                                      error:(CCCryptorStatus *)error
 {
     CCCryptorRef cryptor = NULL;
     CCCryptorStatus status = kCCSuccess;
@@ -204,7 +216,7 @@ static void FixKeyLengths(CCAlgorithm algorithm, NSMutableData *keyData, NSMutab
     NSMutableData *ivData = (NSMutableData *)[iv mutableCopy];
 
     // ensure correct lengths for key and iv data, based on algorithms
-    FixKeyLengths(algorithm, keyData, ivData);
+    OMZFixKeyLengths(algorithm, keyData, ivData);
 
     status = CCCryptorCreate(kCCEncrypt, algorithm, options,
                              keyData.bytes, keyData.length, ivData.bytes,
@@ -215,7 +227,7 @@ static void FixKeyLengths(CCAlgorithm algorithm, NSMutableData *keyData, NSMutab
         return nil;
     }
 
-    NSData *result = [self _runCryptor:cryptor result:&status];
+    NSData *result = [self __runCryptor:cryptor result:&status];
     if (!result && error) *error = status;
 
     CCCryptorRelease(cryptor);
@@ -223,34 +235,34 @@ static void FixKeyLengths(CCAlgorithm algorithm, NSMutableData *keyData, NSMutab
     return result;
 }
 
-- (NSData *)dataDecryptedUsingAlgorithm:(CCAlgorithm)algorithm
-                                    key:(NSData *)key
-                                  error:(CCCryptorStatus *)error
+- (NSData *)omz_dataDecryptedUsingAlgorithm:(CCAlgorithm)algorithm
+                                        key:(NSData *)key
+                                      error:(CCCryptorStatus *)error
 {
-    return [self dataDecryptedUsingAlgorithm:algorithm
-                                         key:key
-                                          iv:nil
-                                     options:0
-                                       error:error];
+    return [self omz_dataDecryptedUsingAlgorithm:algorithm
+                                             key:key
+                                              iv:nil
+                                         options:0
+                                           error:error];
 }
 
-- (NSData *)dataDecryptedUsingAlgorithm:(CCAlgorithm)algorithm
-                                    key:(NSData *)key
-                                options:(CCOptions)options
-                                  error:(CCCryptorStatus *)error
+- (NSData *)omz_dataDecryptedUsingAlgorithm:(CCAlgorithm)algorithm
+                                        key:(NSData *)key
+                                    options:(CCOptions)options
+                                      error:(CCCryptorStatus *)error
 {
-    return [self dataDecryptedUsingAlgorithm:algorithm
-                                         key:key
-                                          iv:nil
-                                     options:options
-                                       error:error];
+    return [self omz_dataDecryptedUsingAlgorithm:algorithm
+                                             key:key
+                                              iv:nil
+                                         options:options
+                                           error:error];
 }
 
-- (NSData *)dataDecryptedUsingAlgorithm:(CCAlgorithm)algorithm
-                                    key:(NSData *)key
-                                     iv:(NSData *)iv
-                                options:(CCOptions)options
-                                  error:(CCCryptorStatus *)error
+- (NSData *)omz_dataDecryptedUsingAlgorithm:(CCAlgorithm)algorithm
+                                        key:(NSData *)key
+                                         iv:(NSData *)iv
+                                    options:(CCOptions)options
+                                      error:(CCCryptorStatus *)error
 {
     CCCryptorRef cryptor = NULL;
     CCCryptorStatus status = kCCSuccess;
@@ -259,7 +271,7 @@ static void FixKeyLengths(CCAlgorithm algorithm, NSMutableData *keyData, NSMutab
     NSMutableData *ivData = (NSMutableData *)[iv mutableCopy];
 
     // ensure correct lengths for key and iv data, based on algorithms
-    FixKeyLengths(algorithm, keyData, ivData);
+    OMZFixKeyLengths(algorithm, keyData, ivData);
 
     status = CCCryptorCreate(kCCDecrypt, algorithm, options,
                              keyData.bytes, keyData.length, ivData.bytes,
@@ -270,7 +282,7 @@ static void FixKeyLengths(CCAlgorithm algorithm, NSMutableData *keyData, NSMutab
         return nil;
     }
 
-    NSData *result = [self _runCryptor:cryptor result:&status];
+    NSData *result = [self __runCryptor:cryptor result:&status];
     if (!result && error) *error = status;
 
     CCCryptorRelease(cryptor);
@@ -278,34 +290,34 @@ static void FixKeyLengths(CCAlgorithm algorithm, NSMutableData *keyData, NSMutab
     return result;
 }
 
-#pragma AES
+#pragma mark AES
 
-- (NSData *)dataAES256EncryptedUsingKey:(NSData *)key error:(NSError **)error
+- (NSData *)omz_dataAES256EncryptedUsingKey:(NSData *)key error:(NSError **)error
 {
     CCCryptorStatus status = kCCSuccess;
-    NSData *result = [self dataEncryptedUsingAlgorithm:kCCAlgorithmAES128
-                                                   key:key
-                                               options:kCCOptionPKCS7Padding
-                                                 error:&status];
+    NSData *result = [self omz_dataEncryptedUsingAlgorithm:kCCAlgorithmAES128
+                                                       key:key
+                                                   options:kCCOptionPKCS7Padding
+                                                     error:&status];
 
     if (result) return result;
 
-    if (error) *error = [NSError errorWithCCCryptorStatus:status];
+    if (error) *error = [NSError omz_errorWithCCCryptorStatus:status];
 
     return nil;
 }
 
-- (NSData *)dataAES256DecryptedUsingKey:(NSData *)key error:(NSError **)error
+- (NSData *)omz_dataAES256DecryptedUsingKey:(NSData *)key error:(NSError **)error
 {
     CCCryptorStatus status = kCCSuccess;
-    NSData *result = [self dataDecryptedUsingAlgorithm:kCCAlgorithmAES128
-                                                   key:key
-                                               options:kCCOptionPKCS7Padding
-                                                 error:&status];
+    NSData *result = [self omz_dataDecryptedUsingAlgorithm:kCCAlgorithmAES128
+                                                       key:key
+                                                   options:kCCOptionPKCS7Padding
+                                                     error:&status];
 
     if (result) return result;
 
-    if (error) *error = [NSError errorWithCCCryptorStatus:status];
+    if (error) *error = [NSError omz_errorWithCCCryptorStatus:status];
 
     return nil;
 }

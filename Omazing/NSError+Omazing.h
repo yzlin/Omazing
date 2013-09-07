@@ -27,8 +27,8 @@ extern NSString * const kOMZCommonCryptoErrorDomain;
 
 @interface NSError (Omazing)
 
-+ (NSError *)errorWithDomain:(NSString *)domain code:(NSInteger)code description:(NSString *)description;
-+ (NSError *)errorWithPOSIXCode:(int)code;
-+ (NSError *)errorWithCCCryptorStatus:(CCCryptorStatus)status;
++ (NSError *)omz_errorWithDomain:(NSString *)domain code:(NSInteger)code description:(NSString *)description;
++ (NSError *)omz_errorWithPOSIXCode:(int)code;
++ (NSError *)omz_errorWithCCCryptorStatus:(CCCryptorStatus)status;
 
 @end

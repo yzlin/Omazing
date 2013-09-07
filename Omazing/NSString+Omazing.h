@@ -24,20 +24,20 @@
 
 @interface NSString (Omazing)
 
-+ (NSString *)uuid;
++ (NSString *)omz_uuid;
 
-- (NSArray *)arrayWithMatchedRegex:(NSString *)pattern;
-- (BOOL)isMatchRegex:(NSString *)pattern;
+- (NSArray *)omz_arrayWithMatchedRegex:(NSString *)pattern;
+- (BOOL)omz_isMatchRegex:(NSString *)pattern;
 
-- (NSString *)md5;
-- (NSString *)sha1;
-- (NSString *)sha256;
-- (NSString *)sha512;
+- (NSString *)omz_md5;
+- (NSString *)omz_sha1;
+- (NSString *)omz_sha256;
+- (NSString *)omz_sha512;
 
-- (BOOL)isEmail;
+- (BOOL)omz_isEmail;
 
-- (BOOL)isSubpathOfPath:(NSString *)path;
+- (BOOL)omz_isSubpathOfPath:(NSString *)path;
 
-- (NSString *)trimmedString;
+- (NSString *)omz_trimmedString;
 
 @end

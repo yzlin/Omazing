@@ -26,12 +26,12 @@
 
 @implementation NSString (Omazing)
 
-+ (NSString *)uuid
++ (NSString *)omz_uuid
 {
     return [NSProcessInfo processInfo].globallyUniqueString;
 }
 
-- (NSArray *)arrayWithMatchedRegex:(NSString *)pattern
+- (NSArray *)omz_arrayWithMatchedRegex:(NSString *)pattern
 {
     NSError *err = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern
@@ -52,7 +52,7 @@
     return results;
 }
 
-- (BOOL)isMatchRegex:(NSString *)pattern
+- (BOOL)omz_isMatchRegex:(NSString *)pattern
 {
     NSError *err = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern
@@ -67,34 +67,35 @@
     return n > 0;
 }
 
-- (NSString *)md5
+- (NSString *)omz_md5
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
 
-    return [data md5];
+    return [data omz_md5];
 }
 
-- (NSString *)sha1
+- (NSString *)omz_sha1
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
 
-    return [data sha1];
+    return [data omz_sha1];
 }
 
-- (NSString *)sha256
+- (NSString *)omz_sha256
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
 
-    return [data sha256];
+    return [data omz_sha256];
 }
 
-- (NSString *)sha512 {
+- (NSString *)omz_sha512
+{
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
 
-    return [data sha512];
+    return [data omz_sha512];
 }
 
-- (BOOL)isEmail
+- (BOOL)omz_isEmail
 {
     BOOL stricterFilter = YES; // Discussion http://blog.logichigh.com/2010/09/02/validating-an-e-mail-address/
     NSString *stricterFilterString = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
@@ -104,7 +105,7 @@
     return [emailTest evaluateWithObject:self];
 }
 
-- (BOOL)isSubpathOfPath:(NSString *)path
+- (BOOL)omz_isSubpathOfPath:(NSString *)path
 {
     NSParameterAssert(path);
     NSString *selfPath = [self stringByStandardizingPath];
@@ -119,7 +120,7 @@
     return (result.location == 0);
 }
 
-- (NSString *)trimmedString
+- (NSString *)omz_trimmedString
 {
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }

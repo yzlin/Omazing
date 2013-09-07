@@ -26,7 +26,7 @@ NSString * const kOMZCommonCryptoErrorDomain = @"OMZCommonCryptoErrorDomain";
 
 @implementation NSError (Omazing)
 
-+ (NSError *)errorWithDomain:(NSString *)domain code:(NSInteger)code description:(NSString *)desc
++ (NSError *)omz_errorWithDomain:(NSString *)domain code:(NSInteger)code description:(NSString *)desc
 {
     NSDictionary *infoDict = @{ NSLocalizedDescriptionKey: desc };
 
@@ -35,12 +35,12 @@ NSString * const kOMZCommonCryptoErrorDomain = @"OMZCommonCryptoErrorDomain";
                                    userInfo:infoDict];
 }
 
-+ (NSError *)errorWithPOSIXCode:(int)code
++ (NSError *)omz_errorWithPOSIXCode:(int)code
 {
     return [NSError errorWithDomain:NSPOSIXErrorDomain code:code userInfo:nil];
 }
 
-+ (NSError *)errorWithCCCryptorStatus:(CCCryptorStatus)status
++ (NSError *)omz_errorWithCCCryptorStatus:(CCCryptorStatus)status
 {
     NSString *description = nil;
     NSString *reason = nil;

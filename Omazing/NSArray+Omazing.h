@@ -24,16 +24,16 @@
 
 @interface NSArray (Omazing)
 
-- (BOOL)any:(BOOL (^)(id))block;
-- (BOOL)all:(BOOL (^)(id))block;
-- (BOOL)none:(BOOL (^)(id))block;
-- (void)each:(void (^)(id))block;
-- (void)each_i:(void (^)(id, NSUInteger))block;
-- (NSArray *)map:(id (^)(id))block;
-- (id)reduce:(id (^)(id, id))block;
-- (NSArray *)filter:(BOOL (^)(id))block;
-- (id)firstMatch:(BOOL (^)(id))block;
-- (NSArray *)zip:(NSArray *)other with:(id (^)(id, id))block;
-- (NSArray *)uniq:(id (^)(id))block;
+- (BOOL)omz_any:(BOOL (^)(id))block;
+- (BOOL)omz_all:(BOOL (^)(id))block;
+- (BOOL)omz_none:(BOOL (^)(id))block;
+- (void)omz_each:(void (^)(id))block;
+- (void)omz_each_i:(void (^)(id, NSUInteger))block;
+- (NSArray *)omz_map:(id (^)(id))block;
+- (id)omz_reduce:(id (^)(id, id))block;
+- (NSArray *)omz_filter:(BOOL (^)(id))block;
+- (id)omz_firstMatch:(BOOL (^)(id))block;
+- (NSArray *)omz_zip:(NSArray *)other with:(id (^)(id, id))block;
+- (NSArray *)omz_uniq:(id (^)(id))block;
 
 @end

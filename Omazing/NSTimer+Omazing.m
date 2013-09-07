@@ -24,7 +24,7 @@
 
 @implementation NSTimer (Omazing)
 
-+ (void)executeBlockForTimer:(NSTimer *)timer
++ (void)__executeBlockForTimer:(NSTimer *)timer
 {
     if (timer.userInfo) {
         void (^block)() = (void (^)())timer.userInfo;
@@ -32,24 +32,24 @@
     }
 }
 
-+ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti block:(void (^)())block repeat:(BOOL)repeat
++ (NSTimer *)omz_timerWithTimeInterval:(NSTimeInterval)ti block:(void (^)())block repeat:(BOOL)repeat
 {
     void (^blk)() = [block copy];
     NSTimer *timer = [self timerWithTimeInterval:ti
                                           target:self
-                                        selector:@selector(executeBlockForTimer:)
+                                        selector:@selector(__executeBlockForTimer:)
                                         userInfo:blk
                                          repeats:repeat];
 
     return timer;
 }
 
-+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti block:(void (^)())block repeat:(BOOL)repeat
++ (NSTimer *)omz_scheduledTimerWithTimeInterval:(NSTimeInterval)ti block:(void (^)())block repeat:(BOOL)repeat
 {
     void (^blk)() = [block copy];
     NSTimer *timer = [self scheduledTimerWithTimeInterval:ti
                                                    target:self
-                                                 selector:@selector(executeBlockForTimer:)
+                                                 selector:@selector(__executeBlockForTimer:)
                                                  userInfo:blk
                                                   repeats:repeat];
 

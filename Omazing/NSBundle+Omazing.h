@@ -24,6 +24,6 @@
 
 @interface NSBundle (Omazing)
 
-@property (nonatomic, strong) NSString *brand;
+@property (nonatomic, strong) NSString *omz_brand;
 
 @end

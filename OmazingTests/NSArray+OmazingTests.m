@@ -32,63 +32,63 @@ describe(@"NSArray", ^{
 
     it(@"should throw exception when block is nil", ^{
         expect(^{
-            [@[] any:nil];
+            [@[] omz_any:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@[] all:nil];
+            [@[] omz_all:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@[] none:nil];
+            [@[] omz_none:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@[] each:nil];
+            [@[] omz_each:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@[] each_i:nil];
+            [@[] omz_each_i:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@[] map:nil];
+            [@[] omz_map:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@[] reduce:nil];
+            [@[] omz_reduce:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@[] filter:nil];
+            [@[] omz_filter:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@[] firstMatch:nil];
+            [@[] omz_firstMatch:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@[] zip:@[] with:nil];
+            [@[] omz_zip:@[] with:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@[] uniq:nil];
+            [@[] omz_uniq:nil];
         }).to.raise(@"NSInternalInconsistencyException");
     });
 
     it(@"-any:", ^{
         NSArray *arr = @[ @0, @1, @2, @3, @4, @5 ];
-        expect([arr any:^BOOL(NSNumber *x) { return x.intValue > 10; }]).to.beFalsy();
-        expect([arr any:^BOOL(NSNumber *x) { return x.intValue > 3; }]).to.beTruthy();
+        expect([arr omz_any:^BOOL(NSNumber *x) { return x.intValue > 10; }]).to.beFalsy();
+        expect([arr omz_any:^BOOL(NSNumber *x) { return x.intValue > 3; }]).to.beTruthy();
     });
 
     it(@"-all:", ^{
         NSArray *arr = @[ @0, @1, @2, @3, @4, @5 ];
-        expect([arr all:^BOOL(NSNumber *x) { return x.intValue < 10; }]).to.beTruthy();
-        expect([arr all:^BOOL(NSNumber *x) { return x.intValue > 3; }]).to.beFalsy();
+        expect([arr omz_all:^BOOL(NSNumber *x) { return x.intValue < 10; }]).to.beTruthy();
+        expect([arr omz_all:^BOOL(NSNumber *x) { return x.intValue > 3; }]).to.beFalsy();
     });
 
     it(@"-none:", ^{
         NSArray *arr = @[ @0, @1, @2, @3, @4, @5 ];
-        expect([arr none:^BOOL(NSNumber *x) { return x.intValue < 10; }]).to.beFalsy();
-        expect([arr none:^BOOL(NSNumber *x) { return x.intValue > 3; }]).to.beFalsy();
-        expect([arr none:^BOOL(NSNumber *x) { return x.intValue < 0; }]).to.beTruthy();
+        expect([arr omz_none:^BOOL(NSNumber *x) { return x.intValue < 10; }]).to.beFalsy();
+        expect([arr omz_none:^BOOL(NSNumber *x) { return x.intValue > 3; }]).to.beFalsy();
+        expect([arr omz_none:^BOOL(NSNumber *x) { return x.intValue < 0; }]).to.beTruthy();
     });
 
     it(@"-each:", ^{
         NSArray *arr = @[ @0, @1, @2, @3, @4, @5 ];
         __block NSMutableArray *result = [NSMutableArray array];
-        [arr each:^(NSNumber *x) { [result addObject:x]; }];
+        [arr omz_each:^(NSNumber *x) { [result addObject:x]; }];
         expect(result).to.equal(arr);
     });
 
@@ -96,7 +96,7 @@ describe(@"NSArray", ^{
         NSArray *arr = @[ @0, @1, @2, @3, @4, @5 ];
         __block NSMutableArray *result = [NSMutableArray array];
         __block NSMutableArray *idxResult = [NSMutableArray array];
-        [arr each_i:^(NSNumber *x, NSUInteger idx) {
+        [arr omz_each_i:^(NSNumber *x, NSUInteger idx) {
             [result addObject:x];
             [idxResult addObject:@(idx)];
         }];
@@ -106,7 +106,7 @@ describe(@"NSArray", ^{
 
     it(@"-map:", ^{
         NSArray *arr = @[ @0, @1, @2, @3, @4, @5 ];
-        NSArray *result = [arr map:^NSNumber *(NSNumber *x) {
+        NSArray *result = [arr omz_map:^NSNumber *(NSNumber *x) {
             return @(x.intValue * x.intValue);
         }];
         expect(result).to.haveCountOf(arr.count);
@@ -114,7 +114,7 @@ describe(@"NSArray", ^{
             expect(result[i]).to.equal(@([arr[i] intValue] * [arr[i] intValue]));
         }
 
-        result = [arr map:^id(NSNumber *x) { return nil; }];
+        result = [arr omz_map:^id(NSNumber *x) { return nil; }];
         expect(result).to.haveCountOf(arr.count);
         for (id item in result) {
             expect(item).to.equal([NSNull null]);
@@ -123,35 +123,35 @@ describe(@"NSArray", ^{
 
     it(@"-reduce:", ^{
         NSArray *arr = @[ @0, @1, @2, @3, @4, @5 ];
-        expect([arr reduce:^NSNumber *(NSNumber *x, NSNumber *y) {
+        expect([arr omz_reduce:^NSNumber *(NSNumber *x, NSNumber *y) {
             return @(x.intValue + y.intValue);
         }]).to.equal(@15);
     });
 
     it(@"-filter:", ^{
         NSArray *arr = @[ @0, @1, @2, @3, @4, @5 ];
-        expect([arr filter:^BOOL(NSNumber *x) { return NO; }]).to.beEmpty();
-        expect([arr filter:^BOOL(NSNumber *x) { return YES; }]).to.equal(arr);
+        expect([arr omz_filter:^BOOL(NSNumber *x) { return NO; }]).to.beEmpty();
+        expect([arr omz_filter:^BOOL(NSNumber *x) { return YES; }]).to.equal(arr);
     });
 
     it(@"-firstMatch:", ^{
         NSArray *arr = @[ @0, @1, @2, @3, @4, @5 ];
-        expect([arr firstMatch:^BOOL(NSNumber *x) { return x.intValue % 2 == 1; }]).to.equal(@1);
+        expect([arr omz_firstMatch:^BOOL(NSNumber *x) { return x.intValue % 2 == 1; }]).to.equal(@1);
     });
 
     it(@"-zip:with:", ^{
         NSArray *arr = @[ @0, @1, @2, @3, @4, @5 ];
-        expect([arr zip:nil with:^id(id x, id y) { return x; }]).to.beEmpty();
-        expect([arr zip:@[] with:^id(id x, id y) { return x; }]).to.beEmpty();
+        expect([arr omz_zip:nil with:^id(id x, id y) { return x; }]).to.beEmpty();
+        expect([arr omz_zip:@[] with:^id(id x, id y) { return x; }]).to.beEmpty();
 
         NSArray *expected = @[ @0, @1, @2, @3 ];
-        expect([arr zip:expected with:^NSNumber *(NSNumber *x, NSNumber *y) { return y; }]).to.equal(expected);
+        expect([arr omz_zip:expected with:^NSNumber *(NSNumber *x, NSNumber *y) { return y; }]).to.equal(expected);
 
         expected = @[ @0, @1, @2, @3, @4, @5, @6, @7 ];
-        expect([arr zip:expected with:^NSNumber *(NSNumber *x, NSNumber *y) { return y; }]).to.equal([expected subarrayWithRange:NSMakeRange(0, 6)]);
+        expect([arr omz_zip:expected with:^NSNumber *(NSNumber *x, NSNumber *y) { return y; }]).to.equal([expected subarrayWithRange:NSMakeRange(0, 6)]);
 
         expected = @[ @0, @1, @4, @9, @16, @25 ];
-        expect([arr zip:arr with:^NSNumber *(NSNumber *x, NSNumber *y) {
+        expect([arr omz_zip:arr with:^NSNumber *(NSNumber *x, NSNumber *y) {
             return @(x.intValue * y.intValue);
         }]).to.equal(expected);
     });
@@ -159,9 +159,9 @@ describe(@"NSArray", ^{
     it(@"-uniq:", ^{
         NSArray *arr = @[ @0, @1, @2, @3, @4, @5 ];
         NSArray *expected = @[ @0 ];
-        expect([arr uniq:^id(NSNumber *x) { return nil; }]).to.equal(expected);
-        expect([arr uniq:^id(NSNumber *x) { return [NSNull null]; }]).to.equal(expected);
-        expect([arr uniq:^id(NSNumber *x) { return @"key"; }]).to.equal(expected);
+        expect([arr omz_uniq:^id(NSNumber *x) { return nil; }]).to.equal(expected);
+        expect([arr omz_uniq:^id(NSNumber *x) { return [NSNull null]; }]).to.equal(expected);
+        expect([arr omz_uniq:^id(NSNumber *x) { return @"key"; }]).to.equal(expected);
     });
 });
 

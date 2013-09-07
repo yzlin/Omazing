@@ -24,13 +24,13 @@
 
 @interface NSSet (Omazing)
 
-- (BOOL)any:(BOOL (^)(id))block;
-- (BOOL)all:(BOOL (^)(id))block;
-- (BOOL)none:(BOOL (^)(id))block;
-- (void)each:(void (^)(id))block;
-- (NSSet *)map:(id (^)(id))block;
-- (id)reduce:(id (^)(id, id))block;
-- (NSSet *)filter:(BOOL (^)(id))block;
-- (id)firstMatch:(BOOL (^)(id))block;
+- (BOOL)omz_any:(BOOL (^)(id))block;
+- (BOOL)omz_all:(BOOL (^)(id))block;
+- (BOOL)omz_none:(BOOL (^)(id))block;
+- (void)omz_each:(void (^)(id))block;
+- (NSSet *)omz_map:(id (^)(id))block;
+- (id)omz_reduce:(id (^)(id, id))block;
+- (NSSet *)omz_filter:(BOOL (^)(id))block;
+- (id)omz_firstMatch:(BOOL (^)(id))block;
 
 @end

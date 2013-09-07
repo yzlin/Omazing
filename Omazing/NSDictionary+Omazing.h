@@ -24,12 +24,12 @@
 
 @interface NSDictionary (Omazing)
 
-- (BOOL)any:(BOOL (^)(id, id))block;
-- (BOOL)all:(BOOL (^)(id, id))block;
-- (BOOL)none:(BOOL (^)(id, id))block;
-- (void)each:(void (^)(id, id))block;
-- (NSDictionary *)map:(id (^)(id, id))block;
-- (NSDictionary *)filter:(BOOL (^)(id, id))block;
-- (id)firstMatch:(BOOL (^)(id, id))block;
+- (BOOL)omz_any:(BOOL (^)(id, id))block;
+- (BOOL)omz_all:(BOOL (^)(id, id))block;
+- (BOOL)omz_none:(BOOL (^)(id, id))block;
+- (void)omz_each:(void (^)(id, id))block;
+- (NSDictionary *)omz_map:(id (^)(id, id))block;
+- (NSDictionary *)omz_filter:(BOOL (^)(id, id))block;
+- (id)omz_firstMatch:(BOOL (^)(id, id))block;
 
 @end

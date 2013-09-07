@@ -42,11 +42,11 @@ describe(@"NSTimer", ^{
     it(@"should support performing block without repeat", ^{
         __block BOOL isDone = NO;
         __block size_t count = 0;
-        [NSThread performBlockInBackground:^{
+        [NSThread omz_performBlockInBackground:^{
             @autoreleasepool {
                 NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
 
-                timer = [NSTimer timerWithTimeInterval:1.0 block:^{
+                timer = [NSTimer omz_timerWithTimeInterval:1.0 block:^{
                     count++;
                     isDone = (count == 1);
                 } repeat:NO];
@@ -65,11 +65,11 @@ describe(@"NSTimer", ^{
     it(@"should support performing block with repeat", ^{
         __block BOOL isDone = NO;
         __block size_t count = 0;
-        [NSThread performBlockInBackground:^{
+        [NSThread omz_performBlockInBackground:^{
             @autoreleasepool {
                 NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
 
-                timer = [NSTimer timerWithTimeInterval:1.0 block:^{
+                timer = [NSTimer omz_timerWithTimeInterval:1.0 block:^{
                     count++;
                     if (count == 3) isDone = YES;
                 } repeat:YES];
@@ -86,11 +86,11 @@ describe(@"NSTimer", ^{
     it(@"should directly add itself to current runloop and support performing block without repeat", ^{
         __block BOOL isDone = NO;
         __block size_t count = 0;
-        [NSThread performBlockInBackground:^{
+        [NSThread omz_performBlockInBackground:^{
             @autoreleasepool {
                 NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
 
-                timer = [NSTimer scheduledTimerWithTimeInterval:1.0 block:^{
+                timer = [NSTimer omz_scheduledTimerWithTimeInterval:1.0 block:^{
                     count++;
                     isDone = (count == 1);
                 } repeat:NO];
@@ -107,11 +107,11 @@ describe(@"NSTimer", ^{
     it(@"should directly add itself to current runloop and support performing block with repeat", ^{
         __block BOOL isDone = NO;
         __block size_t count = 0;
-        [NSThread performBlockInBackground:^{
+        [NSThread omz_performBlockInBackground:^{
             @autoreleasepool {
                 NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
 
-                timer = [NSTimer scheduledTimerWithTimeInterval:1.0 block:^{
+                timer = [NSTimer omz_scheduledTimerWithTimeInterval:1.0 block:^{
                     count++;
                     if (count == 3) isDone = YES;
                 } repeat:YES];

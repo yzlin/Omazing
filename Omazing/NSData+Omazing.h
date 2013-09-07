@@ -25,42 +25,44 @@
 
 @interface NSData (Omazing)
 
+- (NSString *)omz_hex;
+
 #pragma mark - Hash
 
-- (NSString *)md5;
-- (NSString *)sha1;
-- (NSString *)sha256;
-- (NSString *)sha512;
+- (NSString *)omz_md5;
+- (NSString *)omz_sha1;
+- (NSString *)omz_sha256;
+- (NSString *)omz_sha512;
 
 #pragma mark - Symmetric Encryption
 
-- (NSData *)dataEncryptedUsingAlgorithm:(CCAlgorithm)algorithm
-                                    key:(NSData *)key
-                                  error:(CCCryptorStatus *) error;
-- (NSData *)dataEncryptedUsingAlgorithm:(CCAlgorithm)algorithm
-                                    key:(NSData *)key
-                                options:(CCOptions)options
-                                  error:(CCCryptorStatus *)error;
-- (NSData *)dataEncryptedUsingAlgorithm:(CCAlgorithm)algorithm
-                                    key:(NSData *)key
-                                     iv:(NSData *)iv
-                                options:(CCOptions)options
-                                  error:(CCCryptorStatus *)error;
+- (NSData *)omz_dataEncryptedUsingAlgorithm:(CCAlgorithm)algorithm
+                                        key:(NSData *)key
+                                      error:(CCCryptorStatus *) error;
+- (NSData *)omz_dataEncryptedUsingAlgorithm:(CCAlgorithm)algorithm
+                                        key:(NSData *)key
+                                    options:(CCOptions)options
+                                      error:(CCCryptorStatus *)error;
+- (NSData *)omz_dataEncryptedUsingAlgorithm:(CCAlgorithm)algorithm
+                                        key:(NSData *)key
+                                         iv:(NSData *)iv
+                                    options:(CCOptions)options
+                                      error:(CCCryptorStatus *)error;
 
-- (NSData *)dataDecryptedUsingAlgorithm:(CCAlgorithm)algorithm
-                                    key:(NSData *)key
-                                  error:(CCCryptorStatus *)error;
-- (NSData *)dataDecryptedUsingAlgorithm:(CCAlgorithm)algorithm
-                                    key:(NSData *)key
-                                options:(CCOptions)options
-                                  error:(CCCryptorStatus *)error;
-- (NSData *)dataDecryptedUsingAlgorithm:(CCAlgorithm)algorithm
-                                    key:(NSData *)key
-                                     iv:(NSData *)iv
-                                options:(CCOptions)options
-                                  error:(CCCryptorStatus *)error;
+- (NSData *)omz_dataDecryptedUsingAlgorithm:(CCAlgorithm)algorithm
+                                        key:(NSData *)key
+                                      error:(CCCryptorStatus *)error;
+- (NSData *)omz_dataDecryptedUsingAlgorithm:(CCAlgorithm)algorithm
+                                        key:(NSData *)key
+                                    options:(CCOptions)options
+                                      error:(CCCryptorStatus *)error;
+- (NSData *)omz_dataDecryptedUsingAlgorithm:(CCAlgorithm)algorithm
+                                        key:(NSData *)key
+                                         iv:(NSData *)iv
+                                    options:(CCOptions)options
+                                      error:(CCCryptorStatus *)error;
 
-- (NSData *)dataAES256EncryptedUsingKey:(NSData *)key error:(NSError **)error;
-- (NSData *)dataAES256DecryptedUsingKey:(NSData *)key error:(NSError **)error;
+- (NSData *)omz_dataAES256EncryptedUsingKey:(NSData *)key error:(NSError **)error;
+- (NSData *)omz_dataAES256DecryptedUsingKey:(NSData *)key error:(NSError **)error;
 
 @end

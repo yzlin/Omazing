@@ -33,7 +33,7 @@ describe(@"NSObject", ^{
         __block BOOL isDealloced = NO;
         @autoreleasepool {
             NSMutableString *str = [NSMutableString new];
-            [str addDeallocBlock:^{
+            [str omz_addDeallocBlock:^{
                 isDealloced = YES;
             }];
         }
@@ -46,13 +46,13 @@ describe(@"NSObject", ^{
         __block BOOL is3rdBlockDealloced = NO;
         @autoreleasepool {
             NSMutableString *str = [NSMutableString new];
-            [str addDeallocBlock:^{
+            [str omz_addDeallocBlock:^{
                 is1stBlockDealloced = YES;
             }];
-            [str addDeallocBlock:^{
+            [str omz_addDeallocBlock:^{
                 is2ndBlockDealloced = YES;
             }];
-            [str addDeallocBlock:^{
+            [str omz_addDeallocBlock:^{
                 is3rdBlockDealloced = YES;
             }];
         }

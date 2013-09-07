@@ -32,34 +32,34 @@ describe(@"NSDictionary", ^{
 
     it(@"should throw exception when block is nil", ^{
         expect(^{
-            [@{} any:nil];
+            [@{} omz_any:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@{} all:nil];
+            [@{} omz_all:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@{} none:nil];
+            [@{} omz_none:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@{} each:nil];
+            [@{} omz_each:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@{} map:nil];
+            [@{} omz_map:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@{} filter:nil];
+            [@{} omz_filter:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [@{} firstMatch:nil];
+            [@{} omz_firstMatch:nil];
         }).to.raise(@"NSInternalInconsistencyException");
 });
 
     it(@"-any:", ^{
         NSDictionary *dict = @{ @0: @"zero", @1: @"one", @2: @"two", @3: @"three", @4: @"four", @5: @"five" };
-        expect([dict any:^BOOL(NSNumber *k, id v) { return k.intValue > 10; }]).to.beFalsy();
-        expect([dict any:^BOOL(NSNumber *k, id v) { return k.intValue > 3; }]).to.beTruthy();
+        expect([dict omz_any:^BOOL(NSNumber *k, id v) { return k.intValue > 10; }]).to.beFalsy();
+        expect([dict omz_any:^BOOL(NSNumber *k, id v) { return k.intValue > 3; }]).to.beTruthy();
         __block NSUInteger count = 0;
-        expect([dict any:^BOOL(NSNumber *k, id v) {
+        expect([dict omz_any:^BOOL(NSNumber *k, id v) {
             count++;
             expect(v).to.beKindOf([NSString class]);
             return NO;
@@ -69,10 +69,10 @@ describe(@"NSDictionary", ^{
 
     it(@"-all:", ^{
         NSDictionary *dict = @{ @0: @"zero", @1: @"one", @2: @"two", @3: @"three", @4: @"four", @5: @"five" };
-        expect([dict all:^BOOL(NSNumber *k, id v) { return k.intValue < 10; }]).to.beTruthy();
-        expect([dict all:^BOOL(NSNumber *k, id v) { return k.intValue > 3; }]).to.beFalsy();
+        expect([dict omz_all:^BOOL(NSNumber *k, id v) { return k.intValue < 10; }]).to.beTruthy();
+        expect([dict omz_all:^BOOL(NSNumber *k, id v) { return k.intValue > 3; }]).to.beFalsy();
         __block NSUInteger count = 0;
-        expect([dict all:^BOOL(NSNumber *k, id v) {
+        expect([dict omz_all:^BOOL(NSNumber *k, id v) {
             count++;
             expect(v).to.beKindOf([NSString class]);
             return YES;
@@ -82,11 +82,11 @@ describe(@"NSDictionary", ^{
 
     it(@"-none:", ^{
         NSDictionary *dict = @{ @0: @"zero", @1: @"one", @2: @"two", @3: @"three", @4: @"four", @5: @"five" };
-        expect([dict none:^BOOL(NSNumber *k, id v) { return k.intValue < 10; }]).to.beFalsy();
-        expect([dict none:^BOOL(NSNumber *k, id v) { return k.intValue > 3; }]).to.beFalsy();
-        expect([dict none:^BOOL(NSNumber *k, id v) { return k.intValue < 0; }]).to.beTruthy();
+        expect([dict omz_none:^BOOL(NSNumber *k, id v) { return k.intValue < 10; }]).to.beFalsy();
+        expect([dict omz_none:^BOOL(NSNumber *k, id v) { return k.intValue > 3; }]).to.beFalsy();
+        expect([dict omz_none:^BOOL(NSNumber *k, id v) { return k.intValue < 0; }]).to.beTruthy();
         __block NSUInteger count = 0;
-        expect([dict none:^BOOL(NSNumber *k, id v) {
+        expect([dict omz_none:^BOOL(NSNumber *k, id v) {
             count++;
             expect(v).to.beKindOf([NSString class]);
             return NO;
@@ -98,7 +98,7 @@ describe(@"NSDictionary", ^{
         NSDictionary *dict = @{ @0: @"zero", @1: @"one", @2: @"two", @3: @"three", @4: @"four", @5: @"five" };
         __block NSUInteger count = 0;
         __block NSMutableDictionary *result = [NSMutableDictionary dictionary];
-        [dict each:^(NSNumber *k, id v) {
+        [dict omz_each:^(NSNumber *k, id v) {
             count++;
             expect(v).to.beKindOf([NSString class]);
             result[k] = v;
@@ -109,7 +109,7 @@ describe(@"NSDictionary", ^{
 
     it(@"-map:", ^{
         NSDictionary *dict = @{ @0: @"zero", @1: @"one", @2: @"two", @3: @"three", @4: @"four", @5: @"five" };
-        NSDictionary *result = [dict map:^NSNumber *(NSNumber *k, id v) {
+        NSDictionary *result = [dict omz_map:^NSNumber *(NSNumber *k, id v) {
             return @(k.intValue * k.intValue);
         }];
         expect(result).to.haveCountOf(dict.count);
@@ -117,7 +117,7 @@ describe(@"NSDictionary", ^{
             expect(result[k]).to.equal(@(k.intValue * k.intValue));
         }
 
-        result = [dict map:^id(NSNumber *k, id v) { return nil; }];
+        result = [dict omz_map:^id(NSNumber *k, id v) { return nil; }];
         expect(result).to.haveCountOf(dict.count);
         for (NSNumber *k in result) {
             expect(result[k]).to.equal([NSNull null]);
@@ -126,13 +126,13 @@ describe(@"NSDictionary", ^{
 
     it(@"-filter:", ^{
         NSDictionary *dict = @{ @0: @"zero", @1: @"one", @2: @"two", @3: @"three", @4: @"four", @5: @"five" };
-        expect([dict filter:^BOOL(NSNumber *x, id v) { return NO; }]).to.beEmpty();
-        expect([dict filter:^BOOL(NSNumber *x, id v) { return YES; }]).to.equal(dict);
+        expect([dict omz_filter:^BOOL(NSNumber *x, id v) { return NO; }]).to.beEmpty();
+        expect([dict omz_filter:^BOOL(NSNumber *x, id v) { return YES; }]).to.equal(dict);
     });
 
     it(@"-firstMatch:", ^{
         NSDictionary *dict = @{ @0: @"zero", @1: @"one", @2: @"two", @3: @"three", @4: @"four", @5: @"five" };
-        expect([dict firstMatch:^BOOL(NSNumber *k, id v) { return [k isEqualToNumber:@1]; }]).to.equal(@"one");
+        expect([dict omz_firstMatch:^BOOL(NSNumber *k, id v) { return [k isEqualToNumber:@1]; }]).to.equal(@"one");
     });
 });
 

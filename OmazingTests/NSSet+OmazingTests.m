@@ -33,87 +33,87 @@ describe(@"NSSet", ^{
     it(@"should throw exception when block is nil", ^{
         __block NSSet *set = [NSSet set];
         expect(^{
-            [set any:nil];
+            [set omz_any:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [set all:nil];
+            [set omz_all:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [set none:nil];
+            [set omz_none:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [set each:nil];
+            [set omz_each:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [set map:nil];
+            [set omz_map:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [set reduce:nil];
+            [set omz_reduce:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [set filter:nil];
+            [set omz_filter:nil];
         }).to.raise(@"NSInternalInconsistencyException");
         expect(^{
-            [set firstMatch:nil];
+            [set omz_firstMatch:nil];
         }).to.raise(@"NSInternalInconsistencyException");
     });
 
     it(@"-any:", ^{
         NSSet *set = [NSSet setWithArray:@[ @0, @1, @2, @3, @4, @5 ]];
-        expect([set any:^BOOL(NSNumber *x) { return x.intValue > 10; }]).to.beFalsy();
-        expect([set any:^BOOL(NSNumber *x) { return x.intValue > 3; }]).to.beTruthy();
+        expect([set omz_any:^BOOL(NSNumber *x) { return x.intValue > 10; }]).to.beFalsy();
+        expect([set omz_any:^BOOL(NSNumber *x) { return x.intValue > 3; }]).to.beTruthy();
     });
 
     it(@"-all:", ^{
         NSSet *set = [NSSet setWithArray:@[ @0, @1, @2, @3, @4, @5 ]];
-        expect([set all:^BOOL(NSNumber *x) { return x.intValue < 10; }]).to.beTruthy();
-        expect([set all:^BOOL(NSNumber *x) { return x.intValue > 3; }]).to.beFalsy();
+        expect([set omz_all:^BOOL(NSNumber *x) { return x.intValue < 10; }]).to.beTruthy();
+        expect([set omz_all:^BOOL(NSNumber *x) { return x.intValue > 3; }]).to.beFalsy();
     });
 
     it(@"-none:", ^{
         NSSet *set = [NSSet setWithArray:@[ @0, @1, @2, @3, @4, @5 ]];
-        expect([set none:^BOOL(NSNumber *x) { return x.intValue < 10; }]).to.beFalsy();
-        expect([set none:^BOOL(NSNumber *x) { return x.intValue > 3; }]).to.beFalsy();
-        expect([set none:^BOOL(NSNumber *x) { return x.intValue < 0; }]).to.beTruthy();
+        expect([set omz_none:^BOOL(NSNumber *x) { return x.intValue < 10; }]).to.beFalsy();
+        expect([set omz_none:^BOOL(NSNumber *x) { return x.intValue > 3; }]).to.beFalsy();
+        expect([set omz_none:^BOOL(NSNumber *x) { return x.intValue < 0; }]).to.beTruthy();
     });
 
     it(@"-each:", ^{
         NSSet *set = [NSSet setWithArray:@[ @0, @1, @2, @3, @4, @5 ]];
         __block NSMutableSet *result = [NSMutableSet set];
-        [set each:^(NSNumber *x) { [result addObject:x]; }];
+        [set omz_each:^(NSNumber *x) { [result addObject:x]; }];
         expect(result).to.equal(set);
     });
 
     it(@"-map:", ^{
         NSSet *set = [NSSet setWithArray:@[ @0, @1, @2, @3, @4, @5 ]];
         NSSet *expected = [NSSet setWithArray:@[ @0, @1, @4, @9, @16, @25 ]];
-        NSSet *result = [set map:^NSNumber *(NSNumber *x) {
+        NSSet *result = [set omz_map:^NSNumber *(NSNumber *x) {
             return @(x.intValue * x.intValue);
         }];
         expect(result).to.haveCountOf(set.count);
         expect(result).to.equal(expected);
 
-        result = [set map:^id(NSNumber *x) { return nil; }];
+        result = [set omz_map:^id(NSNumber *x) { return nil; }];
         expect(result).to.haveCountOf(1);
         expect(result).to.equal([NSSet setWithObject:[NSNull null]]);
     });
 
     it(@"-reduce:", ^{
         NSSet *set = [NSSet setWithArray:@[ @0, @1, @2, @3, @4, @5 ]];
-        expect([set reduce:^NSNumber *(NSNumber *x, NSNumber *y) {
+        expect([set omz_reduce:^NSNumber *(NSNumber *x, NSNumber *y) {
             return @(x.intValue + y.intValue);
         }]).to.equal(@15);
     });
 
     it(@"-filter:", ^{
         NSSet *set = [NSSet setWithArray:@[ @0, @1, @2, @3, @4, @5 ]];
-        expect([set filter:^BOOL(NSNumber *x) { return NO; }]).to.beEmpty();
-        expect([set filter:^BOOL(NSNumber *x) { return YES; }]).to.equal(set);
+        expect([set omz_filter:^BOOL(NSNumber *x) { return NO; }]).to.beEmpty();
+        expect([set omz_filter:^BOOL(NSNumber *x) { return YES; }]).to.equal(set);
     });
 
     it(@"-firstMatch:", ^{
         NSSet *set = [NSSet setWithArray:@[ @0, @1, @2, @3, @4, @5 ]];
-        expect([set firstMatch:^BOOL(NSNumber *x) { return [x isEqualToNumber:@1]; }]).to.equal(@1);
+        expect([set omz_firstMatch:^BOOL(NSNumber *x) { return [x isEqualToNumber:@1]; }]).to.equal(@1);
     });
 });
 

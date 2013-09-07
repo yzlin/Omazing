@@ -24,14 +24,14 @@
 
 @implementation NSArray (Omazing)
 
-- (BOOL)any:(BOOL (^)(id))block
+- (BOOL)omz_any:(BOOL (^)(id))block
 {
     NSParameterAssert(block != nil);
 
-    return [self firstMatch:block] != nil;
+    return [self omz_firstMatch:block] != nil;
 }
 
-- (BOOL)all:(BOOL (^)(id))block
+- (BOOL)omz_all:(BOOL (^)(id))block
 {
     NSParameterAssert(block != nil);
 
@@ -47,23 +47,23 @@
     return result;
 }
 
-- (BOOL)none:(BOOL (^)(id))block
+- (BOOL)omz_none:(BOOL (^)(id))block
 {
     NSParameterAssert(block != nil);
 
-    return [self firstMatch:block] == nil;
+    return [self omz_firstMatch:block] == nil;
 }
 
-- (void)each:(void (^)(id))block
+- (void)omz_each:(void (^)(id))block
 {
     NSParameterAssert(block != nil);
 
-    [self each_i:^(id obj, NSUInteger idx) {
+    [self omz_each_i:^(id obj, NSUInteger idx) {
         block(obj);
     }];
 }
 
-- (void)each_i:(void (^)(id, NSUInteger))block
+- (void)omz_each_i:(void (^)(id, NSUInteger))block
 {
     NSParameterAssert(block != nil);
 
@@ -72,7 +72,7 @@
     }];
 }
 
-- (NSArray *)map:(id (^)(id))block
+- (NSArray *)omz_map:(id (^)(id))block
 {
     NSParameterAssert(block != nil);
 
@@ -85,7 +85,7 @@
     return result;
 }
 
-- (id)reduce:(id (^)(id, id))block
+- (id)omz_reduce:(id (^)(id, id))block
 {
     NSParameterAssert(block != nil);
 
@@ -98,7 +98,7 @@
     return result;
 }
 
-- (NSArray *)filter:(BOOL (^)(id))block
+- (NSArray *)omz_filter:(BOOL (^)(id))block
 {
     NSParameterAssert(block != nil);
 
@@ -110,7 +110,7 @@
     return result;
 }
 
-- (id)firstMatch:(BOOL(^)(id))block
+- (id)omz_firstMatch:(BOOL(^)(id))block
 {
     NSParameterAssert(block != nil);
 
@@ -126,7 +126,7 @@
     return result;
 }
 
-- (NSArray *)zip:(NSArray *)other with:(id (^)(id, id))block
+- (NSArray *)omz_zip:(NSArray *)other with:(id (^)(id, id))block
 {
     NSParameterAssert(block != nil);
 
@@ -145,7 +145,7 @@
     return result;
 }
 
-- (NSArray *)uniq:(id (^)(id))block
+- (NSArray *)omz_uniq:(id (^)(id))block
 {
     NSParameterAssert(block != nil);
 

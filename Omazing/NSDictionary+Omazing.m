@@ -24,14 +24,14 @@
 
 @implementation NSDictionary (Omazing)
 
-- (BOOL)any:(BOOL (^)(id, id))block
+- (BOOL)omz_any:(BOOL (^)(id, id))block
 {
     NSParameterAssert(block != nil);
 
-    return [self firstMatch:block] != nil;
+    return [self omz_firstMatch:block] != nil;
 }
 
-- (BOOL)all:(BOOL (^)(id, id))block
+- (BOOL)omz_all:(BOOL (^)(id, id))block
 {
     NSParameterAssert(block != nil);
 
@@ -47,14 +47,14 @@
     return result;
 }
 
-- (BOOL)none:(BOOL (^)(id, id))block
+- (BOOL)omz_none:(BOOL (^)(id, id))block
 {
     NSParameterAssert(block != nil);
 
-    return [self firstMatch:block] == nil;
+    return [self omz_firstMatch:block] == nil;
 }
 
-- (void)each:(void (^)(id, id))block
+- (void)omz_each:(void (^)(id, id))block
 {
     NSParameterAssert(block != nil);
 
@@ -63,7 +63,7 @@
     }];
 }
 
-- (NSDictionary *)map:(id (^)(id, id))block
+- (NSDictionary *)omz_map:(id (^)(id, id))block
 {
     NSParameterAssert(block != nil);
 
@@ -76,7 +76,7 @@
     return result;
 }
 
-- (NSDictionary *)filter:(BOOL (^)(id, id))block
+- (NSDictionary *)omz_filter:(BOOL (^)(id, id))block
 {
     NSParameterAssert(block != nil);
 
@@ -88,7 +88,7 @@
     return result;
 }
 
-- (id)firstMatch:(BOOL (^)(id, id))block
+- (id)omz_firstMatch:(BOOL (^)(id, id))block
 {
     NSParameterAssert(block != nil);
 

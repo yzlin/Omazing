@@ -32,13 +32,13 @@ SpecBegin(Omazing)
 describe(@"Utils", ^{
 
     it(@"should support getting safe objects", ^{
-        expect($safe([NSNull null])).to.equal(nil);
-        expect($safe(nil)).to.equal(nil);
-        expect($safe(@"string")).to.equal(@"string");
-        expect($safe(@YES)).to.equal(@YES);
-        expect($safe(@1)).to.equal(@1);
-        expect($safe(@[@1])).to.equal(@[@1]);
-        expect($safe(@{@"key": @"value"})).to.equal(@{@"key": @"value"});
+        expect(omz_safe([NSNull null])).to.equal(nil);
+        expect(omz_safe(nil)).to.equal(nil);
+        expect(omz_safe(@"string")).to.equal(@"string");
+        expect(omz_safe(@YES)).to.equal(@YES);
+        expect(omz_safe(@1)).to.equal(@1);
+        expect(omz_safe(@[@1])).to.equal(@[@1]);
+        expect(omz_safe(@{@"key": @"value"})).to.equal(@{@"key": @"value"});
     });
 
 });

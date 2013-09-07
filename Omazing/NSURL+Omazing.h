@@ -24,6 +24,6 @@
 
 @interface NSURL (Omazing)
 
-+ (NSURL *)URLByAddingPercentEscapesWithString:(NSString *)URLString;
++ (NSURL *)omz_URLByAddingPercentEscapesWithString:(NSString *)URLString;
 
 @end

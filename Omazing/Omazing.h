@@ -40,25 +40,25 @@
 
 #pragma mark - Hash
 
-+ (NSString *)md5FromFile:(NSString *)filePath;
-+ (NSString *)sha1FromFile:(NSString *)filePath;
-+ (NSString *)sha256FromFile:(NSString *)filePath;
-+ (NSString *)sha512FromFile:(NSString *)filePath;
++ (NSString *)omz_md5FromFile:(NSString *)filePath;
++ (NSString *)omz_sha1FromFile:(NSString *)filePath;
++ (NSString *)omz_sha256FromFile:(NSString *)filePath;
++ (NSString *)omz_sha512FromFile:(NSString *)filePath;
 
 #pragma mark - Runtime method swizzling
 
 // inspired from ConciseKit
-+ (BOOL)swizzleMethod:(SEL)origSelector with:(SEL)anotherSelector of:(Class)klass;
-+ (BOOL)swizzleMethod:(SEL)origSelector of:(Class)origKlass with:(SEL)anotherSelector of:(Class)anotherKlass;
-+ (BOOL)swizzleClassMethod:(SEL)origSelector with:(SEL)anotherSelector of:(Class)klass;
-+ (BOOL)swizzleClassMethod:(SEL)origSelector of:(Class)origKlass with:(SEL)anotherSelector of:(Class)anotherKlass;
++ (BOOL)omz_swizzleMethod:(SEL)origSelector with:(SEL)anotherSelector of:(Class)klass;
++ (BOOL)omz_swizzleMethod:(SEL)origSelector of:(Class)origKlass with:(SEL)anotherSelector of:(Class)anotherKlass;
++ (BOOL)omz_swizzleClassMethod:(SEL)origSelector with:(SEL)anotherSelector of:(Class)klass;
++ (BOOL)omz_swizzleClassMethod:(SEL)origSelector of:(Class)origKlass with:(SEL)anotherSelector of:(Class)anotherKlass;
 
 #if !TARGET_OS_IPHONE
-+ (NSSet *)pidsAccessingPath:(NSString *)path;
++ (NSSet *)omz_pidsAccessingPath:(NSString *)path;
 #endif
 
 #pragma mark - Utils
 
-#define $safe(OBJ) ((NSNull *)(OBJ) == [NSNull null] ? nil : (OBJ))
+#define omz_safe(OBJ) ((NSNull *)(OBJ) == [NSNull null] ? nil : (OBJ))
 
 @end
