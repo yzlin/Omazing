@@ -35,6 +35,7 @@
 #import "NSThread+Omazing.h"
 #import "NSURL+Omazing.h"
 #import "NSTimer+Omazing.h"
+#import "OMZFileMonitor.h"
 
 @interface Omazing : NSObject
 
@@ -52,6 +53,8 @@
 + (BOOL)omz_swizzleMethod:(SEL)origSelector of:(Class)origKlass with:(SEL)anotherSelector of:(Class)anotherKlass;
 + (BOOL)omz_swizzleClassMethod:(SEL)origSelector with:(SEL)anotherSelector of:(Class)klass;
 + (BOOL)omz_swizzleClassMethod:(SEL)origSelector of:(Class)origKlass with:(SEL)anotherSelector of:(Class)anotherKlass;
+
+#pragma mark - File Info
 
 #if !TARGET_OS_IPHONE
 + (NSSet *)omz_pidsAccessingPath:(NSString *)path;

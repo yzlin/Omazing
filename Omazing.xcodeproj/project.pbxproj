@@ -45,6 +45,9 @@
 		C39C1D601639A3C200292DF7 /* InfoPlist.en.strings in Resources */ = {isa = PBXBuildFile; fileRef = C39C1D5F1639A3C200292DF7 /* InfoPlist.en.strings */; };
 		C39C1D611639A6A000292DF7 /* InfoPlist.en.strings in Copy "fakebrand" Files */ = {isa = PBXBuildFile; fileRef = C39C1D5F1639A3C200292DF7 /* InfoPlist.en.strings */; };
 		C39C1D631639A6AE00292DF7 /* InfoPlist.en.strings in Copy Default Brand Files */ = {isa = PBXBuildFile; fileRef = C39C1D5C1639A36B00292DF7 /* InfoPlist.en.strings */; };
+		C39EAEF617DDD23800BA72B2 /* OMZFileMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = C39EAEF417DDD23800BA72B2 /* OMZFileMonitor.h */; };
+		C39EAEF717DDD23800BA72B2 /* OMZFileMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C39EAEF517DDD23800BA72B2 /* OMZFileMonitor.m */; };
+		C39EAF2817DE32EB00BA72B2 /* OMZFileMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C39EAF2717DE32EB00BA72B2 /* OMZFileMonitorTests.m */; };
 		C3A84985172579FA00BEAA5B /* NSObject+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C3A84983172579FA00BEAA5B /* NSObject+Omazing.h */; };
 		C3A84986172579FA00BEAA5B /* NSObject+Omazing.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A84984172579FA00BEAA5B /* NSObject+Omazing.m */; };
 		C3CBB3A2161F16460040E3E8 /* NSData+Omazing.h in Headers */ = {isa = PBXBuildFile; fileRef = C3CBB3A0161F16460040E3E8 /* NSData+Omazing.h */; };
@@ -140,6 +143,9 @@
 		C39002D3169C6F9E001BD233 /* NSTimer+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Omazing.m"; sourceTree = "<group>"; };
 		C39C1D5C1639A36B00292DF7 /* InfoPlist.en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.en.strings; sourceTree = "<group>"; };
 		C39C1D5F1639A3C200292DF7 /* InfoPlist.en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.en.strings; sourceTree = "<group>"; };
+		C39EAEF417DDD23800BA72B2 /* OMZFileMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMZFileMonitor.h; sourceTree = "<group>"; };
+		C39EAEF517DDD23800BA72B2 /* OMZFileMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMZFileMonitor.m; sourceTree = "<group>"; };
+		C39EAF2717DE32EB00BA72B2 /* OMZFileMonitorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMZFileMonitorTests.m; sourceTree = "<group>"; };
 		C3A84983172579FA00BEAA5B /* NSObject+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Omazing.h"; sourceTree = "<group>"; };
 		C3A84984172579FA00BEAA5B /* NSObject+Omazing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Omazing.m"; sourceTree = "<group>"; };
 		C3CBB3A0161F16460040E3E8 /* NSData+Omazing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Omazing.h"; sourceTree = "<group>"; };
@@ -233,6 +239,8 @@
 				C312491E172C264500B8D735 /* NSSet+Omazing.m */,
 				C37B408E153A871D00AF4AFE /* NSString+Omazing.h */,
 				C37B408F153A871D00AF4AFE /* NSString+Omazing.m */,
+				C39EAEF417DDD23800BA72B2 /* OMZFileMonitor.h */,
+				C39EAEF517DDD23800BA72B2 /* OMZFileMonitor.m */,
 				C35ADDAA1551095F005A0F49 /* NSURL+Omazing.h */,
 				C35ADDAB1551095F005A0F49 /* NSURL+Omazing.m */,
 				C3438CA115D385A900434683 /* NSBundle+Omazing.h */,
@@ -263,6 +271,7 @@
 			children = (
 				C3E91DEB15D95B6D0001A8EB /* brand */,
 				C3EACA8C1679E9C800D58429 /* OmazingTests.m */,
+				C39EAF2717DE32EB00BA72B2 /* OMZFileMonitorTests.m */,
 				C3438CBB15D3870400434683 /* NSArray+OmazingTests.m */,
 				C312491B172AC98600B8D735 /* NSDictionary+OmazingTests.m */,
 				C330CEFD178BF80D00603DDC /* NSData+OmazingTests.m */,
@@ -333,6 +342,7 @@
 				C3A84985172579FA00BEAA5B /* NSObject+Omazing.h in Headers */,
 				C3124918172A8D2000B8D735 /* NSDictionary+Omazing.h in Headers */,
 				C312491F172C264500B8D735 /* NSSet+Omazing.h in Headers */,
+				C39EAEF617DDD23800BA72B2 /* OMZFileMonitor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +486,7 @@
 				C3A84986172579FA00BEAA5B /* NSObject+Omazing.m in Sources */,
 				C3124919172A8D2000B8D735 /* NSDictionary+Omazing.m in Sources */,
 				C3124920172C264500B8D735 /* NSSet+Omazing.m in Sources */,
+				C39EAEF717DDD23800BA72B2 /* OMZFileMonitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +505,7 @@
 				C312491C172AC98600B8D735 /* NSDictionary+OmazingTests.m in Sources */,
 				C3124922172C311100B8D735 /* NSSet+OmazingTests.m in Sources */,
 				C330CEFE178BF80D00603DDC /* NSData+OmazingTests.m in Sources */,
+				C39EAF2817DE32EB00BA72B2 /* OMZFileMonitorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

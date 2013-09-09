@@ -30,6 +30,8 @@
 
 @implementation Omazing
 
+#pragma mark - Hash
+
 + (NSString *)omz_md5FromFile:(NSString *)filePath
 {
     NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:filePath];
@@ -187,6 +189,8 @@
     method_exchangeImplementations(origMethod, anotherMethod);
     return YES;
 }
+
+#pragma mark - File Info
 
 #if !TARGET_OS_IPHONE
 
